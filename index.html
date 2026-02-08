@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Inicio - Fundación Sonriente</title>
+
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body class="bg-white dark:bg-gray-900 antialiased">
+        <nav class="bg-white fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="assets/img/logo.png" class="h-8" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+    </a>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <div class="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">
+      <!-- Toggle Dark/Light -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-xl border border-gray-300 px-3 py-2 text-sm font-medium shadow-sm
+               hover:bg-gray-100 active:scale-[0.99]
+               dark:border-gray-700 dark:hover:bg-gray-800 dark:text-gray-200"
+        aria-pressed="false"
+        aria-label="Cambiar tema"
+      >
+        <!-- Icono sol (se muestra en dark para volver a claro) -->
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42"/>
+          <circle cx="12" cy="12" r="4" stroke-width="2"/>
+        </svg>
+        <!-- Icono luna (se muestra en claro para ir a dark) -->
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="hidden sm:inline">Tema</span>
+      </button>
+
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden w-full md:block md:w-auto md:order-1" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50
+                 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white
+                 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 px-3 rounded text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="nosotros.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+        </li>
+        <li>
+          <a href="actividades.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Actividades</a>
+        </li>
+        <li>
+          <a href="calendario.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Calendario</a>
+        </li>
+        <li>
+          <a href="contactanos.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script del botón -->
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+
+      const apply = (mode) => {
+        const isDark = mode === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        btn.setAttribute('aria-pressed', String(isDark));
+        try { localStorage.setItem('theme', mode); } catch (_) {}
+      };
+
+      // Estado inicial del botón según clase actual
+      btn.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+
+      btn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        apply(isDark ? 'light' : 'dark');
+      });
+
+      // Si no hay preferencia guardada, sincroniza con el sistema
+      try {
+        const ls = localStorage.getItem('theme');
+        if (!ls) {
+          const mql = window.matchMedia('(prefers-color-scheme: dark)');
+          mql.addEventListener?.('change', (e) => apply(e.matches ? 'dark' : 'light'));
+        }
+      } catch (_) {}
+    })();
+  </script>
+</nav>
+
+
+        <main class="mt-[65px]">
+            <!-- HERO -->
+<section class="relative w-full px-6 py-16 sm:py-24 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-950 dark:to-blue-900">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
+    <!-- Texto principal -->
+    <div class="space-y-6">
+      <span class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold tracking-wide text-blue-800 dark:bg-blue-900/60 dark:text-blue-200">
+        Fundación Sonriente · Juntos por la niñez
+      </span>
+
+      <h1 class="text-4xl font-extrabold leading-tight text-gray-900 dark:text-gray-100 lg:text-5xl">
+        Construyendo Sonrisas,
+        <span class="text-blue-600 dark:text-blue-400">Transformando Vidas</span>
+      </h1>
+
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        Acompañamos a niños, niñas y sus familias en situación de vulnerabilidad a través de
+        jornadas recreativas, formación en valores y acciones comunitarias llenas de amor y esperanza.
+      </p>
+
+      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Descubre cómo puedes vincularte como voluntario, aliado o donante, y sé parte de una comunidad
+        que cree en el poder de una sonrisa para cambiar realidades.
+      </p>
+
+      <div class="flex flex-col gap-4 pt-4 sm:flex-row">
+        <a href="donaciones.html" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+          Hacer una Donación
+          <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+
+        <a href="actividades.html" class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-8 py-3 text-base font-semibold text-gray-800 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
+          Conoce Nuestras Actividades
+        </a>
+      </div>
+
+      <!-- Métricas -->
+      <div class="flex flex-wrap gap-8 border-t border-gray-200 pt-8 dark:border-gray-800" id="metrics">
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="500" data-suffix="+">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Familias beneficiadas</div>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="15">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Años de trabajo social</div>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="25">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Voluntarios activos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="flex justify-center lg:justify-end">
+      <div id="carousel" class="relative w-full max-w-lg aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl dark:shadow-black/40" data-carousel="slide">
+        <div class="relative h-full overflow-hidden rounded-lg">
+    
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/img/carousel/carousel_1.png" alt="Slide 1" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        </div>
+    
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/img/carousel/carousel_2.png" alt="Slide 2" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        </div>
+    
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/img/carousel/carousel_3.png" alt="Slide 3" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        </div>
+    
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/img/carousel/carousel_4.png" alt="Slide 4" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        </div>
+    
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="assets/img/carousel/carousel_5.png" alt="Slide 5" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+        </div>
+    
+</div>
+
+<div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+    
+        <button type="button" aria-label="Slide 1" data-carousel-slide-to="0" aria-current="true" class="w-3 h-3 rounded-full"></button>
+    
+        <button type="button" aria-label="Slide 2" data-carousel-slide-to="1" aria-current="false" class="w-3 h-3 rounded-full"></button>
+    
+        <button type="button" aria-label="Slide 3" data-carousel-slide-to="2" aria-current="false" class="w-3 h-3 rounded-full"></button>
+    
+        <button type="button" aria-label="Slide 4" data-carousel-slide-to="3" aria-current="false" class="w-3 h-3 rounded-full"></button>
+    
+        <button type="button" aria-label="Slide 5" data-carousel-slide-to="4" aria-current="false" class="w-3 h-3 rounded-full"></button>
+    
+</div>
+
+<button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+
+        <span class="sr-only">Anterior</span>
+    </span>
+</button>
+
+<button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+
+        <span class="sr-only">Siguiente</span>
+    </span>
+</button>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ HACEMOS -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+    <div class="mb-10 flex flex-col gap-4 text-center sm:mb-12 sm:text-left sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          ¿Qué hacemos en Fundación Sonriente?
+        </h2>
+        <p class="mt-2 max-w-2xl text-sm sm:text-base text-gray-600 dark:text-gray-400">
+          Desarrollamos programas integrales que combinan recreación, acompañamiento familiar y formación en valores,
+          para aportar al bienestar de la niñez en el departamento del Meta.
+        </p>
+      </div>
+      <a href="nosotros.html" class="inline-flex items-center justify-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+        Conoce más sobre nosotros
+        <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200">
+          <!-- ícono niños -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 10a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm9-3a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM3 20a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4M15 14h2a4 4 0 0 1 4 4"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Jornadas recreativas
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Espacios de juego, música y arte para que los niños y niñas vivan experiencias de alegría,
+          participación y aprendizaje en comunidad.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-200">
+          <!-- ícono libro -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15h-1.5A2.5 2.5 0 0 0 16 20.5V6H6.5A2.5 2.5 0 0 0 4 8.5z"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Formación en valores
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Talleres y encuentros donde se trabajan temas como respeto, solidaridad, autocuidado
+          y proyecto de vida para la niñez y sus familias.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200">
+          <!-- ícono manos -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 11v8a2 2 0 0 0 2 2h2m4-10v8a2 2 0 0 0 2 2h2M8 11V5.5A1.5 1.5 0 0 1 9.5 4 1.5 1.5 0 0 1 11 5.5V7m4 4V7.5A1.5 1.5 0 0 1 16.5 6 1.5 1.5 0 0 1 18 7.5V9"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Acompañamiento a familias
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Procesos de apoyo y orientación para fortalecer hogares protectores, amorosos
+          y comprometidos con el bienestar de los más pequeños.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO PUEDES AYUDAR -->
+<section class="bg-gray-50 dark:bg-gray-950/80">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+    <div class="mb-10 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        ¿Cómo puedes ayudar?
+      </h2>
+      <p class="mt-2 max-w-2xl mx-auto text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Tu apoyo nos permite llegar a más niños y niñas. Puedes unirte como voluntario, hacer una donación
+        o vincular tu empresa o institución como aliada estratégica.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Voluntariado -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Voluntariado
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Acompaña actividades, apoya la logística de jornadas, comparte tus talentos y experiencias con los niños y niñas.
+        </p>
+        <a href="contactanos.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Quiero ser voluntario
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Donaciones -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Donaciones
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Con tu aporte apoyas la compra de refrigerios, kits escolares, materiales lúdicos y el transporte para llegar a más comunidades.
+        </p>
+        <a href="donaciones.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Ver formas de donar
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Aliados -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Aliados estratégicos
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Empresas, instituciones educativas y organizaciones que se unen para desarrollar proyectos de impacto social conjunto.
+        </p>
+        <a href="contactanos.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Ser aliado de la Fundación
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ALIADOS -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-14">
+    <div class="mb-8 text-center">
+      <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        Aliados que hacen posible más sonrisas
+      </h2>
+      <p class="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Trabajamos de la mano con instituciones y empresas que creen en la responsabilidad social
+        y en el poder de transformar realidades desde la niñez.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 items-center">
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 1" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 2" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 3" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 4" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 5" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+      ¿Te gustaría vincular tu organización como aliada de la Fundación Sonriente?
+      <a href="contactanos.html" class="font-medium text-blue-700 hover:underline dark:text-blue-400">
+        Escríbenos y construyamos juntos nuevos proyectos.
+      </a>
+    </p>
+  </div>
+</section>
+
+
+
+        </main>
+
+        <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="flex items-center">
+                    <img src="assets/img/logo.png" class="h-8 me-3" alt="Logo Fundación Sonriente" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Recursos</h2>
+
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="/actividades.html" class="hover:underline">Actividades</a>
+                        </li>
+
+                        <li>
+                            <a href="/calendario.html" class="hover:underline">Calendario</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2025 <a href="#" class="hover:underline">Fundación Sonriente</a>. Todos los derechos reservados.
+            </span>
+
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                        </svg>
+                    <span class="sr-only">Facebook</span>
+                </a>
+
+                <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="sr-only">Instagram</span>
+                </a>
+
+                <a href="https://x.com/Funda_Sonriente" target = "_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+                        </svg>
+                        <span class="sr-only">Twitter</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- CONTADOR JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    let current = 0;
+    const duration = 1500; // ms
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      current = Math.floor(progress * target);
+      el.textContent = current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + suffix; // asegurar valor final exacto
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const options = { threshold: 0.3 };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        counters.forEach((counter) => {
+          if (!counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+        });
+        obs.disconnect(); // solo una vez
+      }
+    });
+  }, options);
+
+  const metricsSection = document.querySelector("#metrics");
+  if (metricsSection) {
+    observer.observe(metricsSection);
+  } else {
+    // fallback: si no encuentra sección, anima igual
+    counters.forEach((counter) => animateCounter(counter));
+  }
+});
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                try {
+                    const ls = localStorage.getItem('theme');
+                    if (ls === 'dark' || (!ls && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                } catch (_) {
+                    /* si localStorage no está disponible, cae a media query */
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>

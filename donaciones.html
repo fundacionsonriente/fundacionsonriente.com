@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Donaciones - Fundación Sonriente</title>
+
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body class="bg-white dark:bg-gray-900 antialiased">
+        <nav class="bg-white fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="assets/img/logo.png" class="h-8" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+    </a>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <div class="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">
+      <!-- Toggle Dark/Light -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-xl border border-gray-300 px-3 py-2 text-sm font-medium shadow-sm
+               hover:bg-gray-100 active:scale-[0.99]
+               dark:border-gray-700 dark:hover:bg-gray-800 dark:text-gray-200"
+        aria-pressed="false"
+        aria-label="Cambiar tema"
+      >
+        <!-- Icono sol (se muestra en dark para volver a claro) -->
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42"/>
+          <circle cx="12" cy="12" r="4" stroke-width="2"/>
+        </svg>
+        <!-- Icono luna (se muestra en claro para ir a dark) -->
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="hidden sm:inline">Tema</span>
+      </button>
+
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden w-full md:block md:w-auto md:order-1" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50
+                 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white
+                 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="nosotros.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+        </li>
+        <li>
+          <a href="actividades.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Actividades</a>
+        </li>
+        <li>
+          <a href="calendario.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Calendario</a>
+        </li>
+        <li>
+          <a href="contactanos.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script del botón -->
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+
+      const apply = (mode) => {
+        const isDark = mode === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        btn.setAttribute('aria-pressed', String(isDark));
+        try { localStorage.setItem('theme', mode); } catch (_) {}
+      };
+
+      // Estado inicial del botón según clase actual
+      btn.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+
+      btn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        apply(isDark ? 'light' : 'dark');
+      });
+
+      // Si no hay preferencia guardada, sincroniza con el sistema
+      try {
+        const ls = localStorage.getItem('theme');
+        if (!ls) {
+          const mql = window.matchMedia('(prefers-color-scheme: dark)');
+          mql.addEventListener?.('change', (e) => apply(e.matches ? 'dark' : 'light'));
+        }
+      } catch (_) {}
+    })();
+  </script>
+</nav>
+
+
+        <main class="mt-[65px]">
+            <section class="bg-gray-50 dark:bg-gray-900">
+  <div class="py-12 px-4 mx-auto max-w-screen-xl lg:py-16">
+    <div class="max-w-2xl mx-auto text-center mb-10">
+      <h1 class="mb-4 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">Donaciones</h1>
+      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Cada aporte nos ayuda a llegar a más niños, niñas y familias en situación de vulnerabilidad. Puedes realizar un apoyo económico o en especie, según tus posibilidades.</p>
+    </div>
+
+    <div class="grid gap-6 mb-10 md:grid-cols-3 max-w-5xl mx-auto">
+      <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Aporte único</h2>
+        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Un solo aporte que se convierte en refrigerios, materiales lúdicos o transporte para las jornadas.</p>
+      </article>
+      <article class="rounded-2xl border border-blue-200 bg-blue-50/80 p-5 shadow-sm dark:border-blue-700/70 dark:bg-blue-900/30">
+        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Aporte mensual</h2>
+        <p class="text-xs sm:text-sm text-gray-700 dark:text-blue-50">Apoyo constante que nos permite planear actividades y acompañamientos a largo plazo.</p>
+      </article>
+      <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Donación en especie</h2>
+        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Puedes donar juguetes, alimentos no perecederos, kits escolares o materiales para actividades.</p>
+      </article>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <form class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm dark:bg-gray-800 dark:border-gray-700" method="post" action="enviar.php">
+        <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Formulario de donación</h2>
+
+        <div class="mb-5">
+          <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu nombre completo</label>
+          <input type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escribe tu nombre completo" required />
+        </div>
+
+        <div class="mb-5">
+          <label for="correo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu correo electrónico</label>
+          <input type="email" id="correo" name="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ejemplo@correo.com" required />
+        </div>
+
+        <div class="mb-5">
+          <label for="tipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de donación</label>
+          <select id="tipo" name="tipo_donacion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            <option value="" selected>Selecciona una opción</option>
+            <option value="aporte_unico">Aporte único</option>
+            <option value="aporte_mensual">Aporte mensual</option>
+            <option value="en_especie">Donación en especie</option>
+          </select>
+        </div>
+
+        <div class="grid gap-4 mb-5 sm:grid-cols-2">
+          <div>
+            <label for="monto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monto aproximado (COP)</label>
+            <input type="number" min="0" step="1000" id="monto" name="monto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ej. 50000" />
+          </div>
+
+          <div>
+            <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Frecuencia</span>
+            <div class="flex flex-wrap gap-3 text-sm">
+              <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input type="radio" name="frecuencia" value="unica" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" checked />Única vez</label>
+              <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input type="radio" name="frecuencia" value="mensual" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" />Mensual</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label for="medio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Medio de donación preferido</label>
+          <select id="medio" name="medio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option value="" selected>Selecciona una opción</option>
+            <option value="transferencia">Transferencia bancaria</option>
+            <option value="nequi">Nequi / Daviplata</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="especie">Donación en especie</option>
+          </select>
+        </div>
+
+        <div class="mb-5">
+          <label for="mensaje" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comentarios o detalles de tu donación</label>
+          <textarea id="mensaje" name="mensaje" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Por ejemplo: qué deseas donar, si es en especie, horarios de contacto, etc."></textarea>
+        </div>
+
+        <div class="mb-6">
+          <label class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300"><input id="acepta_datos" name="acepta_datos" type="checkbox" required class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" /><span>Acepto el tratamiento de mis datos personales por parte de la Fundación Sonriente de acuerdo con la política de privacidad.</span></label>
+        </div>
+
+        <button type="submit" class="inline-flex items-center justify-center text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-6 py-2.5 w-full sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar intención de donación</button>
+
+        <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">Después de enviar este formulario, nuestro equipo se comunicará contigo para indicarte los pasos y canales disponibles para realizar tu donación.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+        </main>
+
+        <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="flex items-center">
+                    <img src="assets/img/logo.png" class="h-8 me-3" alt="Logo Fundación Sonriente" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Recursos</h2>
+
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="/actividades.html" class="hover:underline">Actividades</a>
+                        </li>
+
+                        <li>
+                            <a href="/calendario.html" class="hover:underline">Calendario</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2025 <a href="#" class="hover:underline">Fundación Sonriente</a>. Todos los derechos reservados.
+            </span>
+
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                        </svg>
+                    <span class="sr-only">Facebook</span>
+                </a>
+
+                <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="sr-only">Instagram</span>
+                </a>
+
+                <a href="https://x.com/Funda_Sonriente" target = "_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+                        </svg>
+                        <span class="sr-only">Twitter</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- CONTADOR JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    let current = 0;
+    const duration = 1500; // ms
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      current = Math.floor(progress * target);
+      el.textContent = current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + suffix; // asegurar valor final exacto
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const options = { threshold: 0.3 };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        counters.forEach((counter) => {
+          if (!counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+        });
+        obs.disconnect(); // solo una vez
+      }
+    });
+  }, options);
+
+  const metricsSection = document.querySelector("#metrics");
+  if (metricsSection) {
+    observer.observe(metricsSection);
+  } else {
+    // fallback: si no encuentra sección, anima igual
+    counters.forEach((counter) => animateCounter(counter));
+  }
+});
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                try {
+                    const ls = localStorage.getItem('theme');
+                    if (ls === 'dark' || (!ls && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                } catch (_) {
+                    /* si localStorage no está disponible, cae a media query */
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>

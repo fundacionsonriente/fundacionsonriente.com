@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Nosotros - Fundación Sonriente</title>
+
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body class="bg-white dark:bg-gray-900 antialiased">
+        <nav class="bg-white fixed w-full z-50 top-0 start-0 border-b border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="assets/img/logo.png" class="h-8" alt="Flowbite Logo" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+    </a>
+
+    <!-- Botón hamburguesa (mobile) -->
+    <div class="flex items-center md:order-2 space-x-2 rtl:space-x-reverse">
+      <!-- Toggle Dark/Light -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="inline-flex items-center gap-2 rounded-xl border border-gray-300 px-3 py-2 text-sm font-medium shadow-sm
+               hover:bg-gray-100 active:scale-[0.99]
+               dark:border-gray-700 dark:hover:bg-gray-800 dark:text-gray-200"
+        aria-pressed="false"
+        aria-label="Cambiar tema"
+      >
+        <!-- Icono sol (se muestra en dark para volver a claro) -->
+        <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42"/>
+          <circle cx="12" cy="12" r="4" stroke-width="2"/>
+        </svg>
+        <!-- Icono luna (se muestra en claro para ir a dark) -->
+        <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <span class="hidden sm:inline">Tema</span>
+      </button>
+
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="hidden w-full md:block md:w-auto md:order-1" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50
+                 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white
+                 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="index.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="nosotros.html" class="block py-2 px-3 rounded text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Nosotros</a>
+        </li>
+        <li>
+          <a href="actividades.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Actividades</a>
+        </li>
+        <li>
+          <a href="calendario.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Calendario</a>
+        </li>
+        <li>
+          <a href="contactanos.html" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contáctanos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script del botón -->
+  <script>
+    (function () {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+
+      const apply = (mode) => {
+        const isDark = mode === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
+        btn.setAttribute('aria-pressed', String(isDark));
+        try { localStorage.setItem('theme', mode); } catch (_) {}
+      };
+
+      // Estado inicial del botón según clase actual
+      btn.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+
+      btn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        apply(isDark ? 'light' : 'dark');
+      });
+
+      // Si no hay preferencia guardada, sincroniza con el sistema
+      try {
+        const ls = localStorage.getItem('theme');
+        if (!ls) {
+          const mql = window.matchMedia('(prefers-color-scheme: dark)');
+          mql.addEventListener?.('change', (e) => apply(e.matches ? 'dark' : 'light'));
+        }
+      } catch (_) {}
+    })();
+  </script>
+</nav>
+
+
+        <main class="mt-[65px]">
+            <!-- HERO / FRASE INICIAL -->
+<section class="relative bg-center bg-no-repeat bg-cover bg-blue-200 bg-blend-multiply dark:bg-gradient-to-b dark:from-gray-950 dark:to-blue-900">
+  <div class="px-4 mx-auto max-w-screen-xl min-h-[60vh] flex items-center">
+    <figure class="mx-auto text-center">
+      <svg class="w-10 h-10 mx-auto mb-4 text-blue-100 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+        <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
+      </svg>
+
+      <blockquote>
+        <p class="text-2xl sm:text-3xl italic font-medium text-gray-700 max-w-3xl mx-auto dark:text-white">
+          “Tu mano se extiende a través de la Fundación Sonriente para regalar un pedacito de felicidad”.
+        </p>
+      </blockquote>
+
+      <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+        <img class="w-8 h-8 rounded-full ring-2 ring-blue-200/80 dark:ring-blue-500/60"
+             src="assets/img/mauricio_turriago.png"
+             alt="Foto de perfil de Mauricio Turriago">
+
+        <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-blue-200/70 dark:divide-blue-400/40">
+          <cite class="pe-3 font-medium text-gray-900 dark:text-white">Mauricio Turriago</cite>
+          <cite class="ps-3 text-sm text-gray-700 dark:text-blue-200/80">CEO Fundación Sonriente</cite>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+    <div class="font-light text-gray-600 sm:text-lg dark:text-gray-300">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">¿Quiénes somos?</h2>
+      <p class="mb-4">
+        En <span class="text-blue-600 dark:text-blue-400 font-semibold">Fundación Sonriente</span> trabajamos con el firme propósito de aportar al bienestar y desarrollo integral de la niñez y sus familias. Creemos que cada sonrisa puede transformar una vida, por eso fortalecemos el trabajo social de atención, recreación y prevención desde la primera infancia.
+      </p>
+      <p>
+        Nuestro equipo está comprometido con generar actividades positivas en un ambiente sano, donde los niños y niñas encuentren espacios de alegría, aprendizaje y protección. Construimos
+        <span class="text-blue-600 dark:text-blue-400 font-semibold">puentes de sociedad</span>
+        que llevan esperanza y felicidad a los más pequeños, especialmente a aquellos que se encuentran en situación de vulnerabilidad.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mt-8">
+      <img class="w-full rounded-lg dark:opacity-90 dark:border dark:border-gray-700" src="assets/img/about_us_1.png" alt="Actividades recreativas Fundación Sonriente">
+      <img class="mt-4 w-full lg:mt-10 rounded-lg dark:opacity-90 dark:border dark:border-gray-700" src="assets/img/about_us_2.png" alt="Jornada comunitaria Fundación Sonriente">
+    </div>
+  </div>
+</section>
+
+<!-- MISIÓN Y VISIÓN -->
+<section class="bg-gray-50 dark:bg-gray-950/80">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="flex items-center justify-center p-6 sm:p-12">
+        <div>
+          <h3 class="mb-4 text-3xl sm:text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">Misión sonriente</h3>
+          <p class="mb-4 font-light text-gray-600 dark:text-gray-300">
+            Construir tejido social desde la base de la unión, el respeto, la solidaridad, el amor y la educación a través de la recreación, construyendo un mensaje positivo a las nuevas generaciones, buscando crearles un criterio propio que ayude a forjar hombres y mujeres de bien para la sociedad.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center justify-center p-6 sm:p-12">
+        <div>
+          <h3 class="mb-4 text-3xl sm:text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">Visión sonriente</h3>
+          <p class="mb-4 font-light text-gray-600 dark:text-gray-300">
+            Para el 2030 la Fundación Sonriente será un proyecto que beneficie a miles de niños y sus familias en estado de vulnerabilidad social, económica y de salud en el departamento de El Meta con la fiel creencia de educar a través de la esperanza, el amor y la felicidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES (opcional, suavecito) -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-12 lg:px-6">
+    <div class="mx-auto max-w-3xl text-center mb-6 lg:mb-8">
+      <h2 class="mb-3 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        Nuestros valores
+      </h2>
+      <p class="font-light text-gray-600 sm:text-lg dark:text-gray-400">
+        Cada actividad de la Fundación se sostiene sobre principios que guían nuestro trabajo con la niñez y sus familias.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+      <span class="inline-flex items-center rounded-full bg-blue-50 px-4 py-2 text-sm font-medium text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
+        Amor y empatía
+      </span>
+      <span class="inline-flex items-center rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-200">
+        Respeto y dignidad
+      </span>
+      <span class="inline-flex items-center rounded-full bg-amber-50 px-4 py-2 text-sm font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+        Alegría y juego
+      </span>
+      <span class="inline-flex items-center rounded-full bg-purple-50 px-4 py-2 text-sm font-medium text-purple-800 dark:bg-purple-900/50 dark:text-purple-200">
+        Trabajo en comunidad
+      </span>
+      <span class="inline-flex items-center rounded-full bg-pink-50 px-4 py-2 text-sm font-medium text-pink-800 dark:bg-pink-900/50 dark:text-pink-200">
+        Esperanza y solidaridad
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRO EQUIPO -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+    <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Nuestro equipo</h2>
+      <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+        Somos un grupo de personas que trabajamos con cariño y compromiso para regalar sonrisas.
+        En Sonriente cada integrante aporta lo mejor de sí, desde organizar actividades y juegos,
+        hasta acompañar a las familias en momentos importantes.
+      </p>
+    </div>
+
+    <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+      
+        <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+    <img class="boxart w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="assets/img/mauricio_turriago.png" alt="Portrait">
+
+    <div class="p-5">
+        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Mauricio Turriago</h3>
+
+        <span class="text-gray-500 dark:text-gray-400">Fundador y Director</span>
+
+        <p class="mt-3 mb-4 font-light text-gray-500">Mauricio es el fundador y director de la Fundación Sonriente con la pasión por ayudar a los demás.</p>
+    </div>
+</div>
+
+      
+        <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+    <img class="boxart w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="assets/img/javier_vanegas.png" alt="Portrait">
+
+    <div class="p-5">
+        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Javier Vanegas</h3>
+
+        <span class="text-gray-500 dark:text-gray-400">Coordinador de Proyectos</span>
+
+        <p class="mt-3 mb-4 font-light text-gray-500">Javier es el coordinador de proyectos, encargado de planificar y ejecutar las actividades de la fundación.</p>
+    </div>
+</div>
+
+      
+        <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+    <img class="boxart w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="assets/img/smith_parrado.png" alt="Portrait">
+
+    <div class="p-5">
+        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Smith Parrado</h3>
+
+        <span class="text-gray-500 dark:text-gray-400">Coordinador de Voluntariado</span>
+
+        <p class="mt-3 mb-4 font-light text-gray-500">Smith es el coordinador de voluntariado, gestiona a los voluntarios que apoyan nuestras actividades.</p>
+    </div>
+</div>
+
+      
+        <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+    <img class="boxart w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="assets/img/felipe_marin.png" alt="Portrait">
+
+    <div class="p-5">
+        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">Felipe Marin</h3>
+
+        <span class="text-gray-500 dark:text-gray-400">Coordinador de Comunicaciones</span>
+
+        <p class="mt-3 mb-4 font-light text-gray-500">Felipe es el coordinador de comunicaciones, difunde los logros de la fundación a través de diversos canales.</p>
+    </div>
+</div>
+
+      
+    </div>
+  </div>
+</section>
+
+        </main>
+
+        <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="flex items-center">
+                    <img src="assets/img/logo.png" class="h-8 me-3" alt="Logo Fundación Sonriente" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Fundación Sonriente</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Recursos</h2>
+
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="/actividades.html" class="hover:underline">Actividades</a>
+                        </li>
+
+                        <li>
+                            <a href="/calendario.html" class="hover:underline">Calendario</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2025 <a href="#" class="hover:underline">Fundación Sonriente</a>. Todos los derechos reservados.
+            </span>
+
+            <div class="flex mt-4 sm:justify-center sm:mt-0">
+                <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                            <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                        </svg>
+                    <span class="sr-only">Facebook</span>
+                </a>
+
+                <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="sr-only">Instagram</span>
+                </a>
+
+                <a href="https://x.com/Funda_Sonriente" target = "_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <svg class="w-4 h-4 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
+                        </svg>
+                        <span class="sr-only">Twitter</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- CONTADOR JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    let current = 0;
+    const duration = 1500; // ms
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      current = Math.floor(progress * target);
+      el.textContent = current + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + suffix; // asegurar valor final exacto
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const options = { threshold: 0.3 };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        counters.forEach((counter) => {
+          if (!counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+        });
+        obs.disconnect(); // solo una vez
+      }
+    });
+  }, options);
+
+  const metricsSection = document.querySelector("#metrics");
+  if (metricsSection) {
+    observer.observe(metricsSection);
+  } else {
+    // fallback: si no encuentra sección, anima igual
+    counters.forEach((counter) => animateCounter(counter));
+  }
+});
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                try {
+                    const ls = localStorage.getItem('theme');
+                    if (ls === 'dark' || (!ls && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                } catch (_) {
+                    /* si localStorage no está disponible, cae a media query */
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>
