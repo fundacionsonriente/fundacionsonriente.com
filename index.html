@@ -1,0 +1,258 @@
+---
+layout: default
+title: "Inicio"
+---
+
+<!-- HERO -->
+<section class="relative w-full px-6 py-16 sm:py-24 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-950 dark:to-blue-900">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
+    <!-- Texto principal -->
+    <div class="space-y-6">
+      <span class="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold tracking-wide text-blue-800 dark:bg-blue-900/60 dark:text-blue-200">
+        Fundación Sonriente · Juntos por la niñez
+      </span>
+
+      <h1 class="text-4xl font-extrabold leading-tight text-gray-900 dark:text-gray-100 lg:text-5xl">
+        Construyendo Sonrisas,
+        <span class="text-blue-600 dark:text-blue-400">Transformando Vidas</span>
+      </h1>
+
+      <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        Acompañamos a niños, niñas y sus familias en situación de vulnerabilidad a través de
+        jornadas recreativas, formación en valores y acciones comunitarias llenas de amor y esperanza.
+      </p>
+
+      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Descubre cómo puedes vincularte como voluntario, aliado o donante, y sé parte de una comunidad
+        que cree en el poder de una sonrisa para cambiar realidades.
+      </p>
+
+      <div class="flex flex-col gap-4 pt-4 sm:flex-row">
+        <a href="donaciones.html" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-3 text-base font-semibold text-white shadow-md hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+          Hacer una Donación
+          <svg class="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+
+        <a href="actividades.html" class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-8 py-3 text-base font-semibold text-gray-800 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-800">
+          Conoce Nuestras Actividades
+        </a>
+      </div>
+
+      <!-- Métricas -->
+      <div class="flex flex-wrap gap-8 border-t border-gray-200 pt-8 dark:border-gray-800" id="metrics">
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="500" data-suffix="+">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Familias beneficiadas</div>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="15">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Años de trabajo social</div>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <div class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <span class="counter" data-target="25">0</span>
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-300">Voluntarios activos</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="flex justify-center lg:justify-end">
+      <div id="carousel" class="relative w-full max-w-lg aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl dark:shadow-black/40" data-carousel="slide">
+        {% include carousel.html %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ HACEMOS -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+    <div class="mb-10 flex flex-col gap-4 text-center sm:mb-12 sm:text-left sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+          ¿Qué hacemos en Fundación Sonriente?
+        </h2>
+        <p class="mt-2 max-w-2xl text-sm sm:text-base text-gray-600 dark:text-gray-400">
+          Desarrollamos programas integrales que combinan recreación, acompañamiento familiar y formación en valores,
+          para aportar al bienestar de la niñez en el departamento del Meta.
+        </p>
+      </div>
+      <a href="nosotros.html" class="inline-flex items-center justify-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+        Conoce más sobre nosotros
+        <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-200">
+          <!-- ícono niños -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M9 10a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm9-3a3 3 0 1 1-3-3 3 3 0 0 1 3 3ZM3 20a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4M15 14h2a4 4 0 0 1 4 4"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Jornadas recreativas
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Espacios de juego, música y arte para que los niños y niñas vivan experiencias de alegría,
+          participación y aprendizaje en comunidad.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-200">
+          <!-- ícono libro -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15h-1.5A2.5 2.5 0 0 0 16 20.5V6H6.5A2.5 2.5 0 0 0 4 8.5z"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Formación en valores
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Talleres y encuentros donde se trabajan temas como respeto, solidaridad, autocuidado
+          y proyecto de vida para la niñez y sus familias.
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900/60">
+        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-900/60 dark:text-amber-200">
+          <!-- ícono manos -->
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 11v8a2 2 0 0 0 2 2h2m4-10v8a2 2 0 0 0 2 2h2M8 11V5.5A1.5 1.5 0 0 1 9.5 4 1.5 1.5 0 0 1 11 5.5V7m4 4V7.5A1.5 1.5 0 0 1 16.5 6 1.5 1.5 0 0 1 18 7.5V9"/>
+          </svg>
+        </div>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Acompañamiento a familias
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+          Procesos de apoyo y orientación para fortalecer hogares protectores, amorosos
+          y comprometidos con el bienestar de los más pequeños.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO PUEDES AYUDAR -->
+<section class="bg-gray-50 dark:bg-gray-950/80">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-16">
+    <div class="mb-10 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        ¿Cómo puedes ayudar?
+      </h2>
+      <p class="mt-2 max-w-2xl mx-auto text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Tu apoyo nos permite llegar a más niños y niñas. Puedes unirte como voluntario, hacer una donación
+        o vincular tu empresa o institución como aliada estratégica.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Voluntariado -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Voluntariado
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Acompaña actividades, apoya la logística de jornadas, comparte tus talentos y experiencias con los niños y niñas.
+        </p>
+        <a href="contactanos.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Quiero ser voluntario
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Donaciones -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Donaciones
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Con tu aporte apoyas la compra de refrigerios, kits escolares, materiales lúdicos y el transporte para llegar a más comunidades.
+        </p>
+        <a href="donaciones.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Ver formas de donar
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Aliados -->
+      <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+        <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+          Aliados estratégicos
+        </h3>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-300">
+          Empresas, instituciones educativas y organizaciones que se unen para desarrollar proyectos de impacto social conjunto.
+        </p>
+        <a href="contactanos.html" class="mt-auto inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-400">
+          Ser aliado de la Fundación
+          <svg class="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+          </svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ALIADOS -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="mx-auto max-w-6xl px-6 py-12 sm:py-14">
+    <div class="mb-8 text-center">
+      <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        Aliados que hacen posible más sonrisas
+      </h2>
+      <p class="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        Trabajamos de la mano con instituciones y empresas que creen en la responsabilidad social
+        y en el poder de transformar realidades desde la niñez.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5 items-center">
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 1" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 2" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 3" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 4" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+      <div class="flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Aliado 5" class="h-10 w-auto opacity-70 hover:opacity-100 transition dark:invert-0">
+      </div>
+    </div>
+
+    <p class="mt-6 text-center text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+      ¿Te gustaría vincular tu organización como aliada de la Fundación Sonriente?
+      <a href="contactanos.html" class="font-medium text-blue-700 hover:underline dark:text-blue-400">
+        Escríbenos y construyamos juntos nuevos proyectos.
+      </a>
+    </p>
+  </div>
+</section>
+
+

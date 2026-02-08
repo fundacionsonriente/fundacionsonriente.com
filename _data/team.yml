@@ -1,0 +1,19 @@
+- name: Mauricio Turriago
+  img: mauricio_turriago.png
+  description: Fundador y Director
+  info: Mauricio es el fundador y director de la Fundación Sonriente con la pasión por ayudar a los demás.
+
+- name: Javier Vanegas
+  img: javier_vanegas.png
+  description: Coordinador de Proyectos
+  info: Javier es el coordinador de proyectos, encargado de planificar y ejecutar las actividades de la fundación.
+
+- name: Smith Parrado
+  img: smith_parrado.png
+  description: Coordinador de Voluntariado
+  info: Smith es el coordinador de voluntariado, gestiona a los voluntarios que apoyan nuestras actividades.
+
+- name: Felipe Marin
+  img: felipe_marin.png
+  description: Coordinador de Comunicaciones
+  info: Felipe es el coordinador de comunicaciones, difunde los logros de la fundación a través de diversos canales.

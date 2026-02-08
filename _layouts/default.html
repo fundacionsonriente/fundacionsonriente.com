@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "es-CO" }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ page.title }} - {{ site.title }}</title>
+
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+
+    <body class="bg-white dark:bg-gray-900 antialiased">
+        {% include navbar.html %}
+
+        <main class="mt-[65px]">
+            {{ content }}
+        </main>
+
+        {% include footer.html %}
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script>
+            (function () {
+                try {
+                    const ls = localStorage.getItem('theme');
+                    if (ls === 'dark' || (!ls && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                } catch (_) {
+                    /* si localStorage no está disponible, cae a media query */
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>

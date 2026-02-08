@@ -1,0 +1,24 @@
+url: ''
+# url: 'https://fundacionsonriente.com'
+baseurl: ''
+lang: 'es-CO'
+title: 'Fundación Sonriente'
+
+# mailer: 'https://formspree.io/f/'
+
+plugins:
+  - jekyll-postcss-v2
+
+postcss:
+  cache: false
+
+exclude:
+  - .vscode
+  - package-lock.json
+  - package.json
+  - postcss.config.js
+  - tailwind.config.js
+
+collections:
+  actividades:
+    output: false

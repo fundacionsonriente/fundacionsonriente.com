@@ -1,0 +1,30 @@
+---
+---
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@plugin "flowbite-typography";
+@source "../../../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
+}
+
+@layer base {
+    html {
+        @apply font-roboto;
+    }
+}
+
+@layer components {
+    .boxart {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
