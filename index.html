@@ -37,23 +37,23 @@ permalink: /
         </p>
 
         <div class="mt-9 flex flex-wrap items-center gap-4">
-          <a href="/donaciones" class="btn btn-accent">
+          <a href="{{ "/donaciones" | relative_url }}" class="btn btn-accent">
             Donar ahora
             <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
             </svg>
           </a>
-          <a href="/nosotros" class="btn btn-ghost">
+          <a href="{{ "/nosotros" | relative_url }}" class="btn btn-ghost">
             Conoce la fundación
           </a>
         </div>
 
         <div class="mt-12 flex items-center gap-4">
           <div class="flex -space-x-3">
-            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="/assets/img/mauricio_turriago.png" alt="">
-            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="/assets/img/javier_vanegas.png" alt="">
-            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="/assets/img/smith_parrado.png" alt="">
-            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="/assets/img/felipe_marin.png" alt="">
+            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="{{ "/assets/img/mauricio_turriago.png" | relative_url }}" alt="">
+            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="{{ "/assets/img/javier_vanegas.png" | relative_url }}" alt="">
+            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="{{ "/assets/img/smith_parrado.png" | relative_url }}" alt="">
+            <img class="h-10 w-10 rounded-full ring-2 ring-white object-cover" src="{{ "/assets/img/felipe_marin.png" | relative_url }}" alt="">
           </div>
           <p class="text-sm text-ink-500 max-w-xs">
             Un equipo comprometido con la niñez del Meta desde hace una década.
@@ -66,7 +66,7 @@ permalink: /
           <div aria-hidden="true" class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-blue/15 via-transparent to-brand-yellow/15 blur-2xl"></div>
 
           <div class="relative rounded-[1.75rem] overflow-hidden shadow-2xl shadow-ink-900/15 ring-1 ring-ink-900/5">
-            <img src="/assets/img/actividades_1.png" alt="Niñas y niños participando en una jornada de la Fundación Sonriente"
+            <img src="{{ "/assets/img/actividades_1.png" | relative_url }}" alt="Niñas y niños participando en una jornada de la Fundación Sonriente"
                  class="aspect-[4/5] w-full object-cover">
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-6">
               <p class="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold">Programa Clown</p>
@@ -242,7 +242,7 @@ permalink: /
             Desde 2015 hemos sembrado la semilla de que una sonrisa es la mejor fórmula para crecer.
           </p>
         </div>
-        <a href="/nosotros" class="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-blue mt-6">
+        <a href="{{ "/nosotros" | relative_url }}" class="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-blue mt-6">
           Conocer nuestra historia
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
@@ -270,7 +270,7 @@ permalink: /
           Combinamos recreación, salud, formación y celebración para que cada etapa del año
           deje un recuerdo positivo en las comunidades.
         </p>
-        <a href="/actividades" class="btn-link mt-5">
+        <a href="{{ "/actividades" | relative_url }}" class="btn-link mt-5">
           Ver todos los programas
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
@@ -294,7 +294,7 @@ permalink: /
     <div class="grid items-center gap-12 lg:grid-cols-12" data-reveal>
       <div class="lg:col-span-5 relative">
         <div class="relative overflow-hidden rounded-[1.75rem] border border-ink-100">
-          <img src="/assets/img/actividades_7.png" alt="" class="aspect-[4/5] w-full object-cover">
+          <img src="{{ "/assets/img/actividades_7.png" | relative_url }}" alt="" class="aspect-[4/5] w-full object-cover">
         </div>
         <div class="absolute -bottom-6 -right-2 sm:right-6 card p-5 max-w-[260px]">
           <p class="text-3xl font-extrabold text-brand-blue tabular-nums">
@@ -315,7 +315,7 @@ permalink: /
           de Dios a muchos lugares del país.
         </p>
 
-        <a href="/nosotros" class="btn-link mt-8">
+        <a href="{{ "/nosotros" | relative_url }}" class="btn-link mt-8">
           Conocer nuestra historia
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
@@ -347,7 +347,7 @@ permalink: /
         <p class="mt-2 text-sm text-ink-700 leading-relaxed">
           Apadrina una actividad con un aporte mensual voluntario y transforma vidas con el poder de una sonrisa.
         </p>
-        <a href="/donaciones" class="btn-link mt-4">Quiero ser padrino</a>
+        <a href="{{ "/donaciones" | relative_url }}" class="btn-link mt-4">Quiero ser padrino</a>
       </article>
 
       <article class="card-blue flex flex-col" data-reveal>
@@ -358,7 +358,7 @@ permalink: /
         <p class="mt-2 text-sm text-ink-700 leading-relaxed">
           Dona tu tiempo y ayuda a construir puentes para llevar felicidad a niñas, niños y familias.
         </p>
-        <a href="/voluntariado" class="btn-link mt-4">Sumarme al staff</a>
+        <a href="{{ "/voluntariado" | relative_url }}" class="btn-link mt-4">Sumarme al staff</a>
       </article>
 
       <article class="card-red flex flex-col" data-reveal>
@@ -369,7 +369,7 @@ permalink: /
         <p class="mt-2 text-sm text-ink-700 leading-relaxed">
           Fórmate como payasito hospitalario y comparte momentos inolvidables con los más pequeños.
         </p>
-        <a href="/voluntariado#formacion-clown" class="btn-link mt-4">Quiero formarme</a>
+        <a href="{{ "/voluntariado#formacion-clown" | relative_url }}" class="btn-link mt-4">Quiero formarme</a>
       </article>
 
       <article class="card-mint flex flex-col" data-reveal>
@@ -380,7 +380,7 @@ permalink: /
         <p class="mt-2 text-sm text-ink-700 leading-relaxed">
           Apoya con tu profesión y experiencia al fortalecimiento institucional de este hermoso proyecto.
         </p>
-        <a href="/contactanos" class="btn-link mt-4">Aportar mi experiencia</a>
+        <a href="{{ "/contactanos" | relative_url }}" class="btn-link mt-4">Aportar mi experiencia</a>
       </article>
 
     </div>
@@ -400,7 +400,7 @@ permalink: /
           Súmate a las próximas jornadas.
         </h2>
       </div>
-      <a href="/calendario" class="btn-link self-start lg:self-end">
+      <a href="{{ "/calendario" | relative_url }}" class="btn-link self-start lg:self-end">
         Ver calendario completo
         <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
       </a>
@@ -482,8 +482,8 @@ permalink: /
           </p>
         </div>
         <div class="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
-          <a href="/donaciones" class="btn btn-accent">Donar ahora</a>
-          <a href="/voluntariado" class="btn btn-ghost">Ser voluntario</a>
+          <a href="{{ "/donaciones" | relative_url }}" class="btn btn-accent">Donar ahora</a>
+          <a href="{{ "/voluntariado" | relative_url }}" class="btn btn-ghost">Ser voluntario</a>
         </div>
       </div>
     </div>

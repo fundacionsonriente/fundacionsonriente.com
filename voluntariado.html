@@ -28,7 +28,7 @@ description: "Únete a la Fundación Sonriente como Padrino, Staff, Formación C
       </div>
       <div class="lg:col-span-5 animate-fade-up delay-200">
         <div class="relative">
-          <img src="/assets/img/actividades_4.png" alt="" class="rounded-[1.75rem] aspect-[4/5] w-full object-cover shadow-2xl shadow-ink-900/10">
+          <img src="{{ "/assets/img/actividades_4.png" | relative_url }}" alt="" class="rounded-[1.75rem] aspect-[4/5] w-full object-cover shadow-2xl shadow-ink-900/10">
           <div class="absolute -left-6 bottom-6 card p-4 w-[210px]">
             <p class="text-3xl font-extrabold text-brand-blue tabular-nums">8</p>
             <p class="mt-1 text-xs text-ink-500">programas activos al año</p>
@@ -105,7 +105,7 @@ description: "Únete a la Fundación Sonriente como Padrino, Staff, Formación C
           Apadrina una actividad a través de un aporte mensual voluntario a nuestro proyecto y empieza
           a transformar vidas con el poder de una sonrisa.
         </p>
-        <a href="/donaciones" class="btn-link mt-5">Quiero ser padrino</a>
+        <a href="{{ "/donaciones" | relative_url }}" class="btn-link mt-5">Quiero ser padrino</a>
       </article>
 
       <article id="staff" class="card flex flex-col" data-reveal>
@@ -147,7 +147,7 @@ description: "Únete a la Fundación Sonriente como Padrino, Staff, Formación C
         <p class="mt-3 text-sm text-ink-500 leading-relaxed">
           Apoya con tu profesión y experiencia al fortalecimiento institucional de este hermoso proyecto.
         </p>
-        <a href="/contactanos" class="btn-link mt-5">Aportar mi conocimiento</a>
+        <a href="{{ "/contactanos" | relative_url }}" class="btn-link mt-5">Aportar mi conocimiento</a>
       </article>
 
     </div>

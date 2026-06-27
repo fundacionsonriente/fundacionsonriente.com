@@ -22,8 +22,8 @@ description: "Kits Escolares, Programa Clown, Cines al Barrio, Nativos Sonriente
       </p>
 
       <div class="mt-9 flex flex-wrap gap-3">
-        <a href="/calendario" class="btn btn-primary">Ver calendario</a>
-        <a href="/voluntariado" class="btn btn-ghost">Quiero apoyar</a>
+        <a href="{{ "/calendario" | relative_url }}" class="btn btn-primary">Ver calendario</a>
+        <a href="{{ "/voluntariado" | relative_url }}" class="btn btn-ghost">Quiero apoyar</a>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ description: "Kits Escolares, Programa Clown, Cines al Barrio, Nativos Sonriente
             Construimos nuevos proyectos junto a aliados y voluntarios, siempre con los niños del Meta en el centro.
           </p>
         </div>
-        <a href="/contactanos" class="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-blue mt-6">
+        <a href="{{ "/contactanos" | relative_url }}" class="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-blue mt-6">
           Contáctanos para sumar tu idea
           <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
         </a>
@@ -115,14 +115,14 @@ description: "Kits Escolares, Programa Clown, Cines al Barrio, Nativos Sonriente
           <li class="flex gap-3"><span class="icon-chip icon-chip-yellow !h-7 !w-7 !rounded-lg shrink-0"><svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 10.5 18.75 19.5 9"/></svg></span> Vincula tu institución educativa o empresa como aliada.</li>
         </ul>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/voluntariado" class="btn btn-primary">Quiero ser voluntario</a>
-          <a href="/donaciones" class="btn btn-accent">Donar ahora</a>
+          <a href="{{ "/voluntariado" | relative_url }}" class="btn btn-primary">Quiero ser voluntario</a>
+          <a href="{{ "/donaciones" | relative_url }}" class="btn btn-accent">Donar ahora</a>
         </div>
       </div>
 
       <div class="lg:col-span-6 grid grid-cols-2 gap-4" data-reveal>
-        <img src="/assets/img/actividades_8.png" alt="" class="rounded-2xl aspect-[3/4] object-cover">
-        <img src="/assets/img/actividades_9.png" alt="" class="rounded-2xl aspect-[3/4] object-cover translate-y-8">
+        <img src="{{ "/assets/img/actividades_8.png" | relative_url }}" alt="" class="rounded-2xl aspect-[3/4] object-cover">
+        <img src="{{ "/assets/img/actividades_9.png" | relative_url }}" alt="" class="rounded-2xl aspect-[3/4] object-cover translate-y-8">
       </div>
     </div>
   </div>

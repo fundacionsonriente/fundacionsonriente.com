@@ -8,7 +8,7 @@
 {%- endif -%}
 
 <figure class="group relative overflow-hidden rounded-2xl border border-ink-100 bg-white {{ span_classes }}">
-  <img src="/assets/img/{{ item.img }}" alt="{{ item.alt }}"
+  <img src="{{ '/assets/img/' | append: item.img | relative_url }}" alt="{{ item.alt }}"
        loading="lazy"
        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
 

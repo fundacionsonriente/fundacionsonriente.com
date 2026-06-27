@@ -2,7 +2,7 @@
   <div class="relative mb-5">
     <div class="absolute inset-0 rounded-full bg-brand-blue-soft scale-110 group-hover:scale-125 transition-transform duration-500" aria-hidden="true"></div>
     <img class="relative h-28 w-28 rounded-full object-cover ring-4 ring-white"
-         src="/assets/img/{{ include.member.img }}" alt="{{ include.member.name }}">
+         src="{{ '/assets/img/' | append: include.member.img | relative_url }}" alt="{{ include.member.name }}">
   </div>
   <h3 class="text-base font-semibold text-ink-900">{{ include.member.name }}</h3>
   <p class="mt-1 text-xs uppercase tracking-[0.14em] text-brand-blue font-semibold">{{ include.member.description }}</p>

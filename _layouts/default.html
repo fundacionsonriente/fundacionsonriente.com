@@ -8,10 +8,10 @@
 
         <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
 
-        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" href="{{ "/favicon.ico" | relative_url }}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     </head>
 
     <body class="antialiased">

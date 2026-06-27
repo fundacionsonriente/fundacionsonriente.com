@@ -1,6 +1,6 @@
-url: ''
-# url: 'https://fundacionsonriente.com'
-baseurl: ''
+url: 'https://fundacionsonriente.github.io'
+# url: 'https://fundacionsonriente.com'  # cambiar a este cuando se publique el dominio propio
+baseurl: '/fundacionsonriente.com'        # poner '' si se publica en dominio propio
 lang: 'es-CO'
 title: 'Fundación Sonriente'
 tagline: '¡Sonreír es Gratis!'

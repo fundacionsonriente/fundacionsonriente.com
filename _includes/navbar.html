@@ -46,25 +46,25 @@
 <nav id="site-nav" class="fixed top-0 inset-x-0 z-50" aria-label="Navegación principal">
   <div class="container-prose flex items-center justify-between gap-6 py-3.5">
 
-    <a href="/" class="flex items-center gap-2.5" aria-label="Ir a la página principal de {{ site.title }}">
-      <img src="/assets/img/logo.png" class="h-9 w-9 object-contain" alt="" />
+    <a href="{{ "/" | relative_url }}" class="flex items-center gap-2.5" aria-label="Ir a la página principal de {{ site.title }}">
+      <img src="{{ "/assets/img/logo.png" | relative_url }}" class="h-9 w-9 object-contain" alt="" />
       <span class="text-[15px] font-semibold tracking-tight text-ink-900">
         Fundación <span class="text-brand-blue">Sonriente</span>
       </span>
     </a>
 
     <ul class="hidden lg:flex items-center gap-8">
-      <li><a href="/nosotros"            class="nav-link {% if page.url contains 'nosotros' %}is-active{% endif %}">Nosotros</a></li>
-      <li><a href="/actividades"         class="nav-link {% if page.url contains 'actividades' %}is-active{% endif %}">Programas</a></li>
-      <li><a href="/galeria"             class="nav-link {% if page.url contains 'galeria' %}is-active{% endif %}">Galería</a></li>
-      <li><a href="/voluntariado"        class="nav-link {% if page.url contains 'voluntariado' %}is-active{% endif %}">Voluntariado</a></li>
-      <li><a href="/estados-financieros" class="nav-link {% if page.url contains 'estados-financieros' %}is-active{% endif %}">Transparencia</a></li>
-      <li><a href="/contactanos"         class="nav-link {% if page.url contains 'contactanos' %}is-active{% endif %}">Contacto</a></li>
+      <li><a href="{{ "/nosotros" | relative_url }}"            class="nav-link {% if page.url contains 'nosotros' %}is-active{% endif %}">Nosotros</a></li>
+      <li><a href="{{ "/actividades" | relative_url }}"         class="nav-link {% if page.url contains 'actividades' %}is-active{% endif %}">Programas</a></li>
+      <li><a href="{{ "/galeria" | relative_url }}"             class="nav-link {% if page.url contains 'galeria' %}is-active{% endif %}">Galería</a></li>
+      <li><a href="{{ "/voluntariado" | relative_url }}"        class="nav-link {% if page.url contains 'voluntariado' %}is-active{% endif %}">Voluntariado</a></li>
+      <li><a href="{{ "/estados-financieros" | relative_url }}" class="nav-link {% if page.url contains 'estados-financieros' %}is-active{% endif %}">Transparencia</a></li>
+      <li><a href="{{ "/contactanos" | relative_url }}"         class="nav-link {% if page.url contains 'contactanos' %}is-active{% endif %}">Contacto</a></li>
     </ul>
 
     <div class="flex items-center gap-2">
 
-      <a href="/donaciones" class="hidden sm:inline-flex btn btn-accent py-2.5 px-5 text-sm">
+      <a href="{{ "/donaciones" | relative_url }}" class="hidden sm:inline-flex btn btn-accent py-2.5 px-5 text-sm">
         Donar ahora
         <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
@@ -83,13 +83,13 @@
 
   <div id="mobile-menu" class="lg:hidden border-t border-ink-100 bg-white/95" style="backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);">
     <div class="container-prose py-4 flex flex-col gap-1">
-      <a href="/nosotros"            class="py-3 nav-link {% if page.url contains 'nosotros' %}is-active{% endif %}">Nosotros</a>
-      <a href="/actividades"         class="py-3 nav-link {% if page.url contains 'actividades' %}is-active{% endif %}">Programas</a>
-      <a href="/galeria"             class="py-3 nav-link {% if page.url contains 'galeria' %}is-active{% endif %}">Galería</a>
-      <a href="/voluntariado"        class="py-3 nav-link {% if page.url contains 'voluntariado' %}is-active{% endif %}">Voluntariado</a>
-      <a href="/estados-financieros" class="py-3 nav-link {% if page.url contains 'estados-financieros' %}is-active{% endif %}">Transparencia</a>
-      <a href="/contactanos"         class="py-3 nav-link {% if page.url contains 'contactanos' %}is-active{% endif %}">Contacto</a>
-      <a href="/donaciones" class="btn btn-accent mt-3 w-full">Donar ahora</a>
+      <a href="{{ "/nosotros" | relative_url }}"            class="py-3 nav-link {% if page.url contains 'nosotros' %}is-active{% endif %}">Nosotros</a>
+      <a href="{{ "/actividades" | relative_url }}"         class="py-3 nav-link {% if page.url contains 'actividades' %}is-active{% endif %}">Programas</a>
+      <a href="{{ "/galeria" | relative_url }}"             class="py-3 nav-link {% if page.url contains 'galeria' %}is-active{% endif %}">Galería</a>
+      <a href="{{ "/voluntariado" | relative_url }}"        class="py-3 nav-link {% if page.url contains 'voluntariado' %}is-active{% endif %}">Voluntariado</a>
+      <a href="{{ "/estados-financieros" | relative_url }}" class="py-3 nav-link {% if page.url contains 'estados-financieros' %}is-active{% endif %}">Transparencia</a>
+      <a href="{{ "/contactanos" | relative_url }}"         class="py-3 nav-link {% if page.url contains 'contactanos' %}is-active{% endif %}">Contacto</a>
+      <a href="{{ "/donaciones" | relative_url }}" class="btn btn-accent mt-3 w-full">Donar ahora</a>
     </div>
   </div>
 </nav>

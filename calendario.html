@@ -71,7 +71,7 @@ description: "Consulta las próximas actividades, jornadas y eventos de la Funda
         <p class="mt-2 text-sm text-ink-500 max-w-md mx-auto">
           Muy pronto encontrarás aquí la nueva programación de la Fundación Sonriente.
         </p>
-        <a href="/contactanos" class="btn-link mt-6 justify-center">Suscribirme a novedades</a>
+        <a href="{{ "/contactanos" | relative_url }}" class="btn-link mt-6 justify-center">Suscribirme a novedades</a>
       </div>
 
     {% else %}
@@ -117,7 +117,7 @@ description: "Consulta las próximas actividades, jornadas y eventos de la Funda
             </div>
 
             <div class="lg:col-span-3 lg:text-right">
-              <a href="/contactanos" class="btn btn-accent">Quiero participar</a>
+              <a href="{{ "/contactanos" | relative_url }}" class="btn btn-accent">Quiero participar</a>
             </div>
           </div>
         </article>

@@ -13,8 +13,8 @@
           </h3>
         </div>
         <div class="flex flex-wrap gap-3">
-          <a href="/donaciones" class="btn btn-accent text-sm">Donar ahora</a>
-          <a href="/voluntariado" class="btn btn-ghost text-sm">Ser voluntario</a>
+          <a href="{{ "/donaciones" | relative_url }}" class="btn btn-accent text-sm">Donar ahora</a>
+          <a href="{{ "/voluntariado" | relative_url }}" class="btn btn-ghost text-sm">Ser voluntario</a>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
 
       <div class="lg:col-span-5">
         <div class="flex items-center gap-3">
-          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 object-contain">
+          <img src="{{ "/assets/img/logo.png" | relative_url }}" alt="" class="h-10 w-10 object-contain">
           <span class="text-base font-semibold tracking-tight text-ink-900">Fundación <span class="text-brand-blue">Sonriente</span></span>
         </div>
 
@@ -87,21 +87,21 @@
       <div class="lg:col-span-2">
         <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Fundación</p>
         <ul class="space-y-3 text-sm text-ink-500">
-          <li><a class="hover:text-brand-blue" href="/nosotros">Quiénes somos</a></li>
-          <li><a class="hover:text-brand-blue" href="/nosotros#mision">Misión y visión</a></li>
-          <li><a class="hover:text-brand-blue" href="/nosotros#equipo">Equipo</a></li>
-          <li><a class="hover:text-brand-blue" href="/estados-financieros">Transparencia</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/nosotros" | relative_url }}">Quiénes somos</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/nosotros#mision" | relative_url }}">Misión y visión</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/nosotros#equipo" | relative_url }}">Equipo</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/estados-financieros" | relative_url }}">Transparencia</a></li>
         </ul>
       </div>
 
       <div class="lg:col-span-2">
         <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Participa</p>
         <ul class="space-y-3 text-sm text-ink-500">
-          <li><a class="hover:text-brand-blue" href="/donaciones">Donar</a></li>
-          <li><a class="hover:text-brand-blue" href="/voluntariado">Voluntariado</a></li>
-          <li><a class="hover:text-brand-blue" href="/actividades">Programas</a></li>
-          <li><a class="hover:text-brand-blue" href="/calendario">Calendario</a></li>
-          <li><a class="hover:text-brand-blue" href="/galeria">Galería</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/donaciones" | relative_url }}">Donar</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/voluntariado" | relative_url }}">Voluntariado</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/actividades" | relative_url }}">Programas</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/calendario" | relative_url }}">Calendario</a></li>
+          <li><a class="hover:text-brand-blue" href="{{ "/galeria" | relative_url }}">Galería</a></li>
         </ul>
       </div>
 
@@ -119,8 +119,8 @@
     <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between text-xs text-ink-400">
       <p>© {{ site.time | date: '%Y' }} Fundación Sonriente · Organización sin ánimo de lucro · ¡Sonreír es Gratis!</p>
       <div class="flex items-center gap-5">
-        <a href="/estados-financieros" class="hover:text-brand-blue">Transparencia</a>
-        <a href="/contactanos" class="hover:text-brand-blue">Contacto</a>
+        <a href="{{ "/estados-financieros" | relative_url }}" class="hover:text-brand-blue">Transparencia</a>
+        <a href="{{ "/contactanos" | relative_url }}" class="hover:text-brand-blue">Contacto</a>
       </div>
     </div>
   </div>
