@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "serve": "bundle exec jekyll serve --config _config.yml,_config.dev.yml --livereload",
+        "serve": "bundle exec jekyll serve --livereload",
         "build": "bundle exec jekyll build",
         "build:prod": "JEKYLL_ENV=production bundle exec jekyll build"
     },
