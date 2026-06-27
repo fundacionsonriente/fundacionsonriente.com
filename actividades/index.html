@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Kits Escolares, Programa Clown, Cines al Barrio, Nativos Sonriente, Teatro y Arte, Pinta Tu Escuelita, Riesgos Sociales y Súper Navidad Sonriente.">
+        <meta name="theme-color" content="#1860c4">
+
+        <title>Programas · Fundación Sonriente</title>
+
+        <link rel="icon" href="/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="/assets/css/main.css">
+    </head>
+
+    <body class="antialiased">
+        <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+        <style>
+  #site-nav {
+    background-color: rgba(255,255,255,0.62);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(14,27,52,0.05);
+    transition: background-color 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  }
+  #site-nav.is-scrolled {
+    background-color: rgba(255,255,255,0.82);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border-color: rgba(14,27,52,0.08);
+    box-shadow: 0 6px 24px -18px rgba(14,27,52,0.18);
+  }
+  /* Fallback para navegadores sin backdrop-filter (Firefox antiguo, etc.) */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    #site-nav            { background-color: rgba(255,255,255,0.95); }
+    #site-nav.is-scrolled{ background-color: #ffffff; }
+  }
+  .nav-link {
+    position: relative;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink-700);
+    padding: 0.5rem 0;
+    transition: color 200ms ease;
+  }
+  .nav-link:hover { color: var(--color-ink-900); }
+  .nav-link.is-active { color: var(--color-brand-blue); }
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: var(--color-brand-blue);
+  }
+  #mobile-menu {
+    transition: max-height 350ms ease, opacity 250ms ease;
+    max-height: 0; opacity: 0; overflow: hidden;
+  }
+  #mobile-menu.open { max-height: 700px; opacity: 1; }
+</style>
+
+<nav id="site-nav" class="fixed top-0 inset-x-0 z-50" aria-label="Navegación principal">
+  <div class="container-prose flex items-center justify-between gap-6 py-3.5">
+
+    <a href="/" class="flex items-center gap-2.5" aria-label="Ir a la página principal de Fundación Sonriente">
+      <img src="/assets/img/logo.png" class="h-9 w-9 object-contain" alt="" />
+      <span class="text-[15px] font-semibold tracking-tight text-ink-900">
+        Fundación <span class="text-brand-blue">Sonriente</span>
+      </span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-8">
+      <li><a href="/nosotros"            class="nav-link ">Nosotros</a></li>
+      <li><a href="/actividades"         class="nav-link is-active">Programas</a></li>
+      <li><a href="/galeria"             class="nav-link ">Galería</a></li>
+      <li><a href="/voluntariado"        class="nav-link ">Voluntariado</a></li>
+      <li><a href="/estados-financieros" class="nav-link ">Transparencia</a></li>
+      <li><a href="/contactanos"         class="nav-link ">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-2">
+
+      <a href="/donaciones" class="hidden sm:inline-flex btn btn-accent py-2.5 px-5 text-sm">
+        Donar ahora
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+        </svg>
+      </a>
+
+      <button id="menu-toggle" type="button"
+              class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-700 hover:bg-ink-50"
+              aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden border-t border-ink-100 bg-white/95" style="backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);">
+    <div class="container-prose py-4 flex flex-col gap-1">
+      <a href="/nosotros"            class="py-3 nav-link ">Nosotros</a>
+      <a href="/actividades"         class="py-3 nav-link is-active">Programas</a>
+      <a href="/galeria"             class="py-3 nav-link ">Galería</a>
+      <a href="/voluntariado"        class="py-3 nav-link ">Voluntariado</a>
+      <a href="/estados-financieros" class="py-3 nav-link ">Transparencia</a>
+      <a href="/contactanos"         class="py-3 nav-link ">Contacto</a>
+      <a href="/donaciones" class="btn btn-accent mt-3 w-full">Donar ahora</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    const menuBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!menuBtn || !menu) return;
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+  })();
+</script>
+
+
+        <main id="contenido" class="pt-[72px]">
+            <!-- HERO -->
+<section class="relative overflow-hidden section-festive">
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-soft-grid opacity-40"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -left-20 h-[320px] w-[320px] rounded-full bg-brand-blue/20 blur-3xl"></div>
+
+  <div class="container-prose pt-16 lg:pt-24 pb-12">
+    <div class="max-w-3xl animate-fade-up">
+      <span class="eyebrow">Nuestros programas</span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink-900">
+        Actividades durante el año.
+      </h1>
+      <p class="mt-7 text-lg text-ink-500 max-w-2xl leading-relaxed">
+        Ocho líneas de trabajo que combinan recreación, salud, formación y celebración para acompañar
+        a las comunidades durante todo el año.
+      </p>
+
+      <div class="mt-9 flex flex-wrap gap-3">
+        <a href="/calendario" class="btn btn-primary">Ver calendario</a>
+        <a href="/voluntariado" class="btn btn-ghost">Quiero apoyar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS desde data -->
+<section class="section-white">
+  <div class="container-prose py-20 lg:py-28">
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      
+        <article id="kits-escolares" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25c-2.25-2.25-7.5-1.5-7.5-1.5v13s5.25-.75 7.5 1.5m0-13c2.25-2.25 7.5-1.5 7.5-1.5v13s-5.25-.75-7.5 1.5m0-13v13"/></svg>
+        
+    </span>
+    <span class="tag">Educación</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Kits Escolares</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Apoyo escolar para que ningún niño o niña deje de aprender por falta de materiales.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Entregamos morrales, cuadernos y útiles a estudiantes de barrios priorizados al inicio del año escolar.</p>
+  
+</article>
+
+      
+        <article id="programa-clown" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip icon-chip-red">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.5-7 11-7 11h-4Z"/></svg>
+        
+    </span>
+    <span class="tag tag-red">Salud y bienestar</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Programa Clown</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Payasitos hospitalarios que llevan alegría y juego a niños hospitalizados.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Visitamos áreas pediátricas con voluntarios formados como clowns para acompañar tratamientos con humor y ternura.</p>
+  
+</article>
+
+      
+        <article id="cines-al-barrio" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip icon-chip-yellow">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6.75A2.25 2.25 0 0 1 5.25 4.5h13.5A2.25 2.25 0 0 1 21 6.75v10.5A2.25 2.25 0 0 1 18.75 19.5H5.25A2.25 2.25 0 0 1 3 17.25V6.75Zm0 4h18M7 4.5v15m10-15v15"/></svg>
+        
+    </span>
+    <span class="tag tag-yellow">Comunidad</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Cines al Barrio</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Funciones de cine al aire libre que reúnen a la comunidad en torno a películas familiares.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Llevamos pantallas y proyectores a barrios y veredas para crear noches de cine accesibles y seguras.</p>
+  
+</article>
+
+      
+        <article id="nativos-sonriente" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v6c0 4.5 3 8.25 7.5 9 4.5-.75 7.5-4.5 7.5-9V6L12 3Z"/></svg>
+        
+    </span>
+    <span class="tag">Cultura e identidad</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Nativos Sonriente</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Espacios de identidad y deporte que rescatan tradiciones y valoran la cultura local.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Encuentros, formación deportiva y celebraciones para fortalecer el sentido de pertenencia en los niños y jóvenes.</p>
+  
+</article>
+
+      
+        <article id="teatro-arte-recreacion" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip icon-chip-yellow">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 1 9-9c0 1.66-1.34 3-3 3h-2a2 2 0 0 0-2 2v2c0 1.1-.9 2-2 2Z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor"/><circle cx="12" cy="7.5" r="1" fill="currentColor"/><circle cx="16.5" cy="10.5" r="1" fill="currentColor"/></svg>
+        
+    </span>
+    <span class="tag tag-yellow">Recreación</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Teatro, Arte y Recreación Sonriente</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Jornadas recreativas con juego, música, arte y expresión corporal.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Espacios de creatividad para que niñas y niños descubran sus talentos y construyan habilidades sociales.</p>
+  
+</article>
+
+      
+        <article id="pinta-tu-escuelita" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip icon-chip-red">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 14.5 4 20l5.5-1.5L20 8l-4-4L5.5 14.5Z"/></svg>
+        
+    </span>
+    <span class="tag tag-red">Infraestructura</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Pinta Tu Escuelita</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Renovamos espacios escolares con color, murales y mejoras locativas.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Trabajamos junto a comunidades educativas para que los niños aprendan en entornos dignos y alegres.</p>
+  
+</article>
+
+      
+        <article id="riesgos-sociales" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v4m0 4h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>
+        
+    </span>
+    <span class="tag">Prevención</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Los Riesgos Sociales</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">Talleres y charlas para prevenir consumo, violencia y deserción escolar.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Acompañamos a niñas, niños y familias con herramientas para enfrentar riesgos del entorno y proteger su desarrollo.</p>
+  
+</article>
+
+      
+        <article id="super-navidad-sonriente" class="card flex flex-col h-full" data-reveal>
+  <div class="flex items-center justify-between">
+    <span class="icon-chip icon-chip-red">
+      
+          <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12v8H4v-8M2 8h20v4H2zM12 8v13M12 8s-1.5-4-4-4a2 2 0 0 0 0 4h4Zm0 0s1.5-4 4-4a2 2 0 0 1 0 4h-4Z"/></svg>
+        
+    </span>
+    <span class="tag tag-red">Especial</span>
+  </div>
+
+  <h3 class="mt-6 text-xl font-semibold text-ink-900">Súper Navidad Sonriente</h3>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">La gran jornada anual de Navidad con regalos, recreación y celebración con miles de niños.</p>
+  
+    <p class="mt-3 text-sm text-ink-500 leading-relaxed">Cierre del año en el que la fundación, voluntarios y aliados llevan magia, juguetes y momentos inolvidables.</p>
+  
+</article>
+
+      
+
+      <article class="relative overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-brand-blue-soft via-white to-[#fff4d6] border border-brand-blue/15 p-8 flex flex-col justify-between" data-reveal>
+        <div aria-hidden="true" class="absolute -right-16 -bottom-16 h-56 w-56 rounded-full bg-brand-yellow/25 blur-3xl"></div>
+        <div aria-hidden="true" class="absolute -left-12 -top-12 h-40 w-40 rounded-full bg-brand-blue/15 blur-3xl"></div>
+        <div class="relative">
+          <span class="tag">Nuevas iniciativas</span>
+          <h3 class="mt-5 text-2xl font-extrabold tracking-tight text-ink-900 leading-snug">¿Tienes una idea para crear impacto?</h3>
+          <p class="mt-3 text-sm text-ink-500 leading-relaxed">
+            Construimos nuevos proyectos junto a aliados y voluntarios, siempre con los niños del Meta en el centro.
+          </p>
+        </div>
+        <a href="/contactanos" class="relative inline-flex items-center gap-2 text-sm font-semibold text-brand-blue mt-6">
+          Contáctanos para sumar tu idea
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LÍNEA DE TIEMPO ANUAL -->
+<section class="section-soft">
+  <div class="container-prose py-20 lg:py-28">
+    <div class="max-w-2xl mb-14" data-reveal>
+      <span class="eyebrow">Un año en Sonriente</span>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink-900">
+        Acompañamos a las familias durante todo el año.
+      </h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+
+      <article class="card-soft p-6" data-reveal>
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Ene — Mar</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Apertura del año</h3>
+        <p class="mt-3 text-sm text-ink-500">Kits Escolares y diagnóstico comunitario para arrancar con fuerza.</p>
+      </article>
+
+      <article class="card-soft p-6" data-reveal>
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Abr — Ago</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Recreación y arte</h3>
+        <p class="mt-3 text-sm text-ink-500">Teatro, Arte y Recreación, Cines al Barrio y Pinta Tu Escuelita.</p>
+      </article>
+
+      <article class="card-soft p-6" data-reveal>
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Sep — Nov</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Prevención y cultura</h3>
+        <p class="mt-3 text-sm text-ink-500">Los Riesgos Sociales y Nativos Sonriente cierran procesos formativos.</p>
+      </article>
+
+      <article class="card-soft p-6" data-reveal>
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Diciembre</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Súper Navidad Sonriente</h3>
+        <p class="mt-3 text-sm text-ink-500">La gran jornada anual que cierra el año con regalos y celebración.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA VOLUNTARIADO -->
+<section id="voluntariado" class="section-white">
+  <div class="container-prose py-20 lg:py-28">
+    <div class="grid items-center gap-12 lg:grid-cols-12" data-reveal>
+      <div class="lg:col-span-6">
+        <span class="eyebrow">Súmate</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink-900">
+          Cada jornada es posible gracias a personas como tú.
+        </h2>
+        <p class="mt-6 text-base text-ink-500 leading-relaxed">
+          Tu tiempo, talento o recursos pueden ser la pieza que falta para que un niño o niña tenga un día inolvidable.
+        </p>
+        <ul class="mt-6 space-y-3 text-sm text-ink-500">
+          <li class="flex gap-3"><span class="icon-chip icon-chip-yellow !h-7 !w-7 !rounded-lg shrink-0"><svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 10.5 18.75 19.5 9"/></svg></span> Acompaña jornadas como animador o staff de campo.</li>
+          <li class="flex gap-3"><span class="icon-chip icon-chip-yellow !h-7 !w-7 !rounded-lg shrink-0"><svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 10.5 18.75 19.5 9"/></svg></span> Apoya con transporte, refrigerios o materiales didácticos.</li>
+          <li class="flex gap-3"><span class="icon-chip icon-chip-yellow !h-7 !w-7 !rounded-lg shrink-0"><svg class="h-3.5 w-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75 10.5 18.75 19.5 9"/></svg></span> Vincula tu institución educativa o empresa como aliada.</li>
+        </ul>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/voluntariado" class="btn btn-primary">Quiero ser voluntario</a>
+          <a href="/donaciones" class="btn btn-accent">Donar ahora</a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-6 grid grid-cols-2 gap-4" data-reveal>
+        <img src="/assets/img/actividades_8.png" alt="" class="rounded-2xl aspect-[3/4] object-cover">
+        <img src="/assets/img/actividades_9.png" alt="" class="rounded-2xl aspect-[3/4] object-cover translate-y-8">
+      </div>
+    </div>
+  </div>
+</section>
+
+        </main>
+
+        <footer class="bg-white border-t border-ink-100">
+  <!-- Franja institucional de color: azul · amarillo · rojo -->
+  <div aria-hidden="true" class="h-1.5 w-full" style="background: linear-gradient(90deg, #1860c4 0%, #1860c4 33%, #f3b50a 33%, #f3b50a 66%, #d72828 66%, #d72828 100%);"></div>
+
+  <!-- CTA superior -->
+  <div class="section-soft border-b border-ink-100">
+    <div class="container-prose py-10 lg:py-12">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] font-semibold text-brand-blue">¡Sonreír es Gratis!</p>
+          <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink-900 max-w-xl">
+            Tu mano se extiende a través de la Fundación Sonriente para regalar un pedacito de felicidad.
+          </h3>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="/donaciones" class="btn btn-accent text-sm">Donar ahora</a>
+          <a href="/voluntariado" class="btn btn-ghost text-sm">Ser voluntario</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-prose py-14 lg:py-16">
+    <div class="grid gap-10 lg:grid-cols-12">
+
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3">
+          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 object-contain">
+          <span class="text-base font-semibold tracking-tight text-ink-900">Fundación <span class="text-brand-blue">Sonriente</span></span>
+        </div>
+
+        <p class="mt-5 text-sm text-ink-500 leading-relaxed max-w-md">
+          Somos una organización civil unida desde 2015 con la misión de construir puentes para llevar
+          felicidad a los más pequeños y sus familias en el departamento del Meta.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-sm text-ink-500">
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h2.04a1.5 1.5 0 0 1 1.43 1.04l.86 2.65a1.5 1.5 0 0 1-.4 1.55l-1.32 1.18a13 13 0 0 0 6.07 6.07l1.18-1.32a1.5 1.5 0 0 1 1.55-.4l2.65.86a1.5 1.5 0 0 1 1.04 1.43v2.04a2.25 2.25 0 0 1-2.25 2.25H17C9.27 21.75 2.25 14.73 2.25 7Z"/>
+              </svg>
+            </span>
+            <a href="tel:+573219972131" class="font-medium text-ink-900">(+57) 321 997 2131</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-8m18 0a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3m18 0-9 6-9-6"/>
+              </svg>
+            </span>
+            <a href="mailto:fundacionsonriente@hotmail.com" class="font-medium text-ink-900">fundacionsonriente@hotmail.com</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z"/>
+              </svg>
+            </span>
+            <span>Villavicencio, Meta · Colombia</span>
+          </li>
+        </ul>
+
+        <div class="mt-7 flex items-center gap-3">
+          <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" rel="noopener" aria-label="Facebook"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+              <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" rel="noopener" aria-label="Instagram"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="https://x.com/Funda_Sonriente" target="_blank" rel="noopener" aria-label="Twitter / X"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Fundación</p>
+        <ul class="space-y-3 text-sm text-ink-500">
+          <li><a class="hover:text-brand-blue" href="/nosotros">Quiénes somos</a></li>
+          <li><a class="hover:text-brand-blue" href="/nosotros#mision">Misión y visión</a></li>
+          <li><a class="hover:text-brand-blue" href="/nosotros#equipo">Equipo</a></li>
+          <li><a class="hover:text-brand-blue" href="/estados-financieros">Transparencia</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Participa</p>
+        <ul class="space-y-3 text-sm text-ink-500">
+          <li><a class="hover:text-brand-blue" href="/donaciones">Donar</a></li>
+          <li><a class="hover:text-brand-blue" href="/voluntariado">Voluntariado</a></li>
+          <li><a class="hover:text-brand-blue" href="/actividades">Programas</a></li>
+          <li><a class="hover:text-brand-blue" href="/calendario">Calendario</a></li>
+          <li><a class="hover:text-brand-blue" href="/galeria">Galería</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Información legal</p>
+        <ul class="space-y-2 text-sm text-ink-500">
+          <li><span class="font-semibold text-ink-900">Razón social</span><br>Fundación Sonriente — Alfonso Rojas</li>
+          <li><span class="font-semibold text-ink-900">NIT</span> 901.120.906-0</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="hr-soft my-10">
+
+    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between text-xs text-ink-400">
+      <p>© 2026 Fundación Sonriente · Organización sin ánimo de lucro · ¡Sonreír es Gratis!</p>
+      <div class="flex items-center gap-5">
+        <a href="/estados-financieros" class="hover:text-brand-blue">Transparencia</a>
+        <a href="/contactanos" class="hover:text-brand-blue">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    const duration = 1500;
+    const startTime = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step); else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(c => { if (!c.dataset.done) { c.dataset.done = '1'; animate(c); } });
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  const target = document.querySelector("#metrics") || counters[0];
+  io.observe(target);
+});
+</script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const els = document.querySelectorAll('[data-reveal]');
+                if (!('IntersectionObserver' in window) || !els.length) {
+                    els.forEach(el => el.classList.add('is-visible'));
+                    return;
+                }
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+                els.forEach(el => io.observe(el));
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const nav = document.getElementById('site-nav');
+                if (!nav) return;
+                const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            });
+        </script>
+    </body>
+</html>

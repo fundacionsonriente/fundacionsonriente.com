@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Estados financieros, indicadores e información legal de la Fundación Sonriente — Alfonso Rojas (NIT 901.120.906-0).">
+        <meta name="theme-color" content="#1860c4">
+
+        <title>Transparencia · Fundación Sonriente</title>
+
+        <link rel="icon" href="/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="/assets/css/main.css">
+    </head>
+
+    <body class="antialiased">
+        <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+        <style>
+  #site-nav {
+    background-color: rgba(255,255,255,0.62);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(14,27,52,0.05);
+    transition: background-color 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+  }
+  #site-nav.is-scrolled {
+    background-color: rgba(255,255,255,0.82);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border-color: rgba(14,27,52,0.08);
+    box-shadow: 0 6px 24px -18px rgba(14,27,52,0.18);
+  }
+  /* Fallback para navegadores sin backdrop-filter (Firefox antiguo, etc.) */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    #site-nav            { background-color: rgba(255,255,255,0.95); }
+    #site-nav.is-scrolled{ background-color: #ffffff; }
+  }
+  .nav-link {
+    position: relative;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-ink-700);
+    padding: 0.5rem 0;
+    transition: color 200ms ease;
+  }
+  .nav-link:hover { color: var(--color-ink-900); }
+  .nav-link.is-active { color: var(--color-brand-blue); }
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -2px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: var(--color-brand-blue);
+  }
+  #mobile-menu {
+    transition: max-height 350ms ease, opacity 250ms ease;
+    max-height: 0; opacity: 0; overflow: hidden;
+  }
+  #mobile-menu.open { max-height: 700px; opacity: 1; }
+</style>
+
+<nav id="site-nav" class="fixed top-0 inset-x-0 z-50" aria-label="Navegación principal">
+  <div class="container-prose flex items-center justify-between gap-6 py-3.5">
+
+    <a href="/" class="flex items-center gap-2.5" aria-label="Ir a la página principal de Fundación Sonriente">
+      <img src="/assets/img/logo.png" class="h-9 w-9 object-contain" alt="" />
+      <span class="text-[15px] font-semibold tracking-tight text-ink-900">
+        Fundación <span class="text-brand-blue">Sonriente</span>
+      </span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-8">
+      <li><a href="/nosotros"            class="nav-link ">Nosotros</a></li>
+      <li><a href="/actividades"         class="nav-link ">Programas</a></li>
+      <li><a href="/galeria"             class="nav-link ">Galería</a></li>
+      <li><a href="/voluntariado"        class="nav-link ">Voluntariado</a></li>
+      <li><a href="/estados-financieros" class="nav-link is-active">Transparencia</a></li>
+      <li><a href="/contactanos"         class="nav-link ">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-2">
+
+      <a href="/donaciones" class="hidden sm:inline-flex btn btn-accent py-2.5 px-5 text-sm">
+        Donar ahora
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+        </svg>
+      </a>
+
+      <button id="menu-toggle" type="button"
+              class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-700 hover:bg-ink-50"
+              aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden border-t border-ink-100 bg-white/95" style="backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px);">
+    <div class="container-prose py-4 flex flex-col gap-1">
+      <a href="/nosotros"            class="py-3 nav-link ">Nosotros</a>
+      <a href="/actividades"         class="py-3 nav-link ">Programas</a>
+      <a href="/galeria"             class="py-3 nav-link ">Galería</a>
+      <a href="/voluntariado"        class="py-3 nav-link ">Voluntariado</a>
+      <a href="/estados-financieros" class="py-3 nav-link is-active">Transparencia</a>
+      <a href="/contactanos"         class="py-3 nav-link ">Contacto</a>
+      <a href="/donaciones" class="btn btn-accent mt-3 w-full">Donar ahora</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    const menuBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!menuBtn || !menu) return;
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+  })();
+</script>
+
+
+        <main id="contenido" class="pt-[72px]">
+            <!-- HERO -->
+<section class="relative overflow-hidden section-festive">
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-soft-grid opacity-40"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand-blue/20 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -left-20 h-[320px] w-[320px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
+
+  <div class="container-prose pt-16 lg:pt-24 pb-12">
+    <div class="max-w-3xl animate-fade-up">
+      <span class="eyebrow">Transparencia</span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink-900">
+        Cuentas claras, sonrisas seguras.
+      </h1>
+      <p class="mt-7 text-lg text-ink-500 max-w-2xl leading-relaxed">
+        Publicamos nuestros estados financieros firmados y la información legal de la Fundación Sonriente —
+        Alfonso Rojas (NIT 901.120.906-0) para que cada aporte tenga trazabilidad.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- INDICADORES REALES 2025 -->
+<section class="section-white">
+  <div class="container-prose py-16">
+    <div class="flex items-baseline justify-between mb-8" data-reveal>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-ink-900">Estado financiero 2025</h2>
+      <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Cifras en COP</p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
+      <div class="card">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Ingresos de actividades</p>
+        <p class="mt-3 text-3xl font-extrabold text-ink-900 tabular-nums">$ 15.589.510</p>
+        <p class="mt-1 text-sm text-ink-500">+21% frente a 2024 ($ 12.883.400)</p>
+      </div>
+      <div class="card">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Costo de ejecución meritoria</p>
+        <p class="mt-3 text-3xl font-extrabold text-ink-900 tabular-nums">$ 13.349.415</p>
+        <p class="mt-1 text-sm text-ink-500">Recursos invertidos en programas</p>
+      </div>
+      <div class="card">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Excedente del periodo</p>
+        <p class="mt-3 text-3xl font-extrabold text-brand-blue tabular-nums">$ 1.614.971</p>
+        <p class="mt-1 text-sm text-ink-500">Destinado a fortalecer la misión</p>
+      </div>
+      <div class="card">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Patrimonio total</p>
+        <p class="mt-3 text-3xl font-extrabold text-ink-900 tabular-nums">$ 10.372.184</p>
+        <p class="mt-1 text-sm text-ink-500">Crecimiento sostenido desde 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISTRIBUCIÓN -->
+<section class="section-soft">
+  <div class="container-prose py-20 lg:py-28">
+    <div class="grid gap-12 lg:grid-cols-12" data-reveal>
+
+      <div class="lg:col-span-5">
+        <span class="eyebrow">Dónde van los recursos</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+          La mayor parte va directo a la misión.
+        </h2>
+        <p class="mt-6 text-base text-ink-500 leading-relaxed">
+          En 2025 destinamos el <strong>85,6 %</strong> de nuestros ingresos a costos de ejecución meritoria;
+          es decir, recursos directamente invertidos en los programas que llevan felicidad a la niñez del Meta.
+        </p>
+        <p class="mt-4 text-sm text-ink-500">
+          Fuente: Estados financieros firmados por el Representante Legal y la Revisoría Fiscal.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 card p-8 lg:p-10">
+
+        <div class="space-y-6">
+          <div>
+            <div class="flex items-baseline justify-between text-sm">
+              <p class="font-semibold text-ink-900">Ejecución meritoria (programas)</p>
+              <p class="text-ink-500 tabular-nums">85,6 %</p>
+            </div>
+            <div class="mt-2 h-2 rounded-full bg-ink-100 overflow-hidden">
+              <div class="h-full bg-brand-blue rounded-full" style="width:85.6%"></div>
+            </div>
+            <p class="mt-1 text-xs text-ink-400 tabular-nums">$ 13.349.415</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between text-sm">
+              <p class="font-semibold text-ink-900">Gastos operativos</p>
+              <p class="text-ink-500 tabular-nums">2,8 %</p>
+            </div>
+            <div class="mt-2 h-2 rounded-full bg-ink-100 overflow-hidden">
+              <div class="h-full bg-ink-400 rounded-full" style="width:2.8%"></div>
+            </div>
+            <p class="mt-1 text-xs text-ink-400 tabular-nums">$ 437.700</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between text-sm">
+              <p class="font-semibold text-ink-900">Costos financieros</p>
+              <p class="text-ink-500 tabular-nums">1,2 %</p>
+            </div>
+            <div class="mt-2 h-2 rounded-full bg-ink-100 overflow-hidden">
+              <div class="h-full bg-brand-red rounded-full" style="width:1.2%"></div>
+            </div>
+            <p class="mt-1 text-xs text-ink-400 tabular-nums">$ 187.478</p>
+          </div>
+
+          <div>
+            <div class="flex items-baseline justify-between text-sm">
+              <p class="font-semibold text-ink-900">Excedente reinvertido</p>
+              <p class="text-ink-500 tabular-nums">10,4 %</p>
+            </div>
+            <div class="mt-2 h-2 rounded-full bg-ink-100 overflow-hidden">
+              <div class="h-full bg-brand-yellow rounded-full" style="width:10.4%"></div>
+            </div>
+            <p class="mt-1 text-xs text-ink-400 tabular-nums">$ 1.614.971</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BALANCE -->
+<section class="section-white">
+  <div class="container-prose py-20 lg:py-24">
+    <div class="max-w-3xl mb-12" data-reveal>
+      <span class="eyebrow">Balance comparativo</span>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+        Comparativo 2025 vs 2024.
+      </h2>
+    </div>
+
+    <div class="card p-0 overflow-hidden" data-reveal>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-ink-50 text-ink-700">
+            <tr>
+              <th class="text-left font-semibold px-6 py-4">Concepto</th>
+              <th class="text-right font-semibold px-6 py-4 tabular-nums">2025</th>
+              <th class="text-right font-semibold px-6 py-4 tabular-nums">2024</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink-100 text-ink-700">
+            <tr>
+              <td class="px-6 py-3.5">Efectivo y equivalentes</td>
+              <td class="px-6 py-3.5 text-right tabular-nums">$ 6.542.511</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ 5.475.257</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3.5">Cuentas comerciales por cobrar</td>
+              <td class="px-6 py-3.5 text-right tabular-nums">$ 3.668.716</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ 2.991.116</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3.5">Propiedades, planta y equipo</td>
+              <td class="px-6 py-3.5 text-right tabular-nums">$ 200.472</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ 290.840</td>
+            </tr>
+            <tr class="bg-ink-50/60">
+              <td class="px-6 py-3.5 font-semibold text-ink-900">Total activos</td>
+              <td class="px-6 py-3.5 text-right tabular-nums font-semibold text-ink-900">$ 10.411.699</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ 8.757.213</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-3.5">Total pasivos</td>
+              <td class="px-6 py-3.5 text-right tabular-nums">$ 39.515</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ —</td>
+            </tr>
+            <tr class="bg-ink-50/60">
+              <td class="px-6 py-3.5 font-semibold text-ink-900">Total patrimonio</td>
+              <td class="px-6 py-3.5 text-right tabular-nums font-semibold text-brand-blue">$ 10.372.184</td>
+              <td class="px-6 py-3.5 text-right tabular-nums text-ink-500">$ 8.757.213</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMACIÓN LEGAL -->
+<section class="section-soft">
+  <div class="container-prose py-20 lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-3" data-reveal>
+
+      <article class="card p-7">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Representante Legal</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Neyer Mauricio Turriago Gutiérrez</h3>
+        <p class="mt-1 text-sm text-ink-500">C.C. 1.121.833.067</p>
+      </article>
+
+      <article class="card p-7">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Contador Público</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Heydi Daniela Casanova Herrera</h3>
+        <p class="mt-1 text-sm text-ink-500">T.P. 330519-T</p>
+        <p class="mt-3 text-xs text-ink-400">Miembro designado por Grupo Empresarial Qualitif de Colombia SAS</p>
+      </article>
+
+      <article class="card p-7">
+        <p class="text-xs uppercase tracking-[0.16em] font-semibold text-ink-400">Revisor Fiscal</p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-900">Diana Marcela García Rodríguez</h3>
+        <p class="mt-1 text-sm text-ink-500">T.P. 309521-T</p>
+        <p class="mt-3 text-xs text-ink-400">Miembro designado por Financial and Accounting Solutions Colombia S.A.S.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DESCARGAS -->
+<section class="section-white">
+  <div class="container-prose py-20 lg:py-28">
+    <div class="max-w-3xl mb-14" data-reveal>
+      <span class="eyebrow">Documentos</span>
+      <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink-900">
+        Estados financieros firmados.
+      </h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <article class="card flex flex-col" data-reveal>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.378 11.882-1.628-1.628a1.125 1.125 0 1 1 1.59-1.59l1.628 1.628m0 0L17.25 16.5M9 7.5h6m-6 4.5h6"/>
+            </svg>
+          </span>
+          <span class="tag">2025</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold text-ink-900">EEFF Sonriente 2025</h3>
+        <p class="mt-2 text-sm text-ink-500">Situación financiera, resultado, flujo de efectivo y cambios en el patrimonio.</p>
+        <a href="/assets/pdf/EEFF%20SONRIENTE%202025%20FIRMADOS.pdf" target="_blank" rel="noopener" download class="btn-link mt-6">
+          Descargar PDF firmado
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+        </a>
+      </article>
+
+      <article class="card flex flex-col" data-reveal>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.378 11.882-1.628-1.628a1.125 1.125 0 1 1 1.59-1.59l1.628 1.628m0 0L17.25 16.5M9 7.5h6m-6 4.5h6"/>
+            </svg>
+          </span>
+          <span class="tag tag-quiet">2024</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold text-ink-900">Informe de gestión 2024</h3>
+        <p class="mt-2 text-sm text-ink-500">Cifras comparativas y reporte de actividades del año.</p>
+        <a href="#" class="btn-link mt-6">Solicitar copia</a>
+      </article>
+
+      <article class="card flex flex-col" data-reveal>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21V8.25M3.75 8.25 12 3l8.25 5.25M3.75 8.25h16.5"/>
+            </svg>
+          </span>
+          <span class="tag tag-yellow">Visión</span>
+        </div>
+        <h3 class="mt-6 text-lg font-semibold text-ink-900">Brochure Sonriente 2030</h3>
+        <p class="mt-2 text-sm text-ink-500">Hacia dónde vamos: la visión y los programas que nos guían al 2030.</p>
+        <a href="/assets/pdf/Brochure%20Sonriente%202030.pdf" target="_blank" rel="noopener" download class="btn-link mt-6">
+          Descargar brochure
+          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <div class="mt-16 card-soft p-6 sm:p-8 max-w-3xl mx-auto text-center" data-reveal>
+      <h3 class="text-lg font-semibold text-ink-900">¿Eres aliado o donante?</h3>
+      <p class="mt-2 text-sm text-ink-500">
+        Podemos compartir reportes adicionales o personalizados sobre el uso de tu aporte.
+      </p>
+      <a href="/contactanos" class="btn btn-accent mt-5">Solicitar reporte</a>
+    </div>
+  </div>
+</section>
+
+        </main>
+
+        <footer class="bg-white border-t border-ink-100">
+  <!-- Franja institucional de color: azul · amarillo · rojo -->
+  <div aria-hidden="true" class="h-1.5 w-full" style="background: linear-gradient(90deg, #1860c4 0%, #1860c4 33%, #f3b50a 33%, #f3b50a 66%, #d72828 66%, #d72828 100%);"></div>
+
+  <!-- CTA superior -->
+  <div class="section-soft border-b border-ink-100">
+    <div class="container-prose py-10 lg:py-12">
+      <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] font-semibold text-brand-blue">¡Sonreír es Gratis!</p>
+          <h3 class="mt-2 text-xl sm:text-2xl font-bold text-ink-900 max-w-xl">
+            Tu mano se extiende a través de la Fundación Sonriente para regalar un pedacito de felicidad.
+          </h3>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="/donaciones" class="btn btn-accent text-sm">Donar ahora</a>
+          <a href="/voluntariado" class="btn btn-ghost text-sm">Ser voluntario</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-prose py-14 lg:py-16">
+    <div class="grid gap-10 lg:grid-cols-12">
+
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-3">
+          <img src="/assets/img/logo.png" alt="" class="h-10 w-10 object-contain">
+          <span class="text-base font-semibold tracking-tight text-ink-900">Fundación <span class="text-brand-blue">Sonriente</span></span>
+        </div>
+
+        <p class="mt-5 text-sm text-ink-500 leading-relaxed max-w-md">
+          Somos una organización civil unida desde 2015 con la misión de construir puentes para llevar
+          felicidad a los más pequeños y sus familias en el departamento del Meta.
+        </p>
+
+        <ul class="mt-6 space-y-3 text-sm text-ink-500">
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75A2.25 2.25 0 0 1 4.5 4.5h2.04a1.5 1.5 0 0 1 1.43 1.04l.86 2.65a1.5 1.5 0 0 1-.4 1.55l-1.32 1.18a13 13 0 0 0 6.07 6.07l1.18-1.32a1.5 1.5 0 0 1 1.55-.4l2.65.86a1.5 1.5 0 0 1 1.04 1.43v2.04a2.25 2.25 0 0 1-2.25 2.25H17C9.27 21.75 2.25 14.73 2.25 7Z"/>
+              </svg>
+            </span>
+            <a href="tel:+573219972131" class="font-medium text-ink-900">(+57) 321 997 2131</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-8m18 0a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3m18 0-9 6-9-6"/>
+              </svg>
+            </span>
+            <a href="mailto:fundacionsonriente@hotmail.com" class="font-medium text-ink-900">fundacionsonriente@hotmail.com</a>
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="icon-chip !h-9 !w-9 !rounded-xl">
+              <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z"/>
+              </svg>
+            </span>
+            <span>Villavicencio, Meta · Colombia</span>
+          </li>
+        </ul>
+
+        <div class="mt-7 flex items-center gap-3">
+          <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" rel="noopener" aria-label="Facebook"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+              <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" rel="noopener" aria-label="Instagram"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+          <a href="https://x.com/Funda_Sonriente" target="_blank" rel="noopener" aria-label="Twitter / X"
+             class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink-50 text-ink-700 hover:bg-brand-blue hover:text-white transition">
+            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Fundación</p>
+        <ul class="space-y-3 text-sm text-ink-500">
+          <li><a class="hover:text-brand-blue" href="/nosotros">Quiénes somos</a></li>
+          <li><a class="hover:text-brand-blue" href="/nosotros#mision">Misión y visión</a></li>
+          <li><a class="hover:text-brand-blue" href="/nosotros#equipo">Equipo</a></li>
+          <li><a class="hover:text-brand-blue" href="/estados-financieros">Transparencia</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Participa</p>
+        <ul class="space-y-3 text-sm text-ink-500">
+          <li><a class="hover:text-brand-blue" href="/donaciones">Donar</a></li>
+          <li><a class="hover:text-brand-blue" href="/voluntariado">Voluntariado</a></li>
+          <li><a class="hover:text-brand-blue" href="/actividades">Programas</a></li>
+          <li><a class="hover:text-brand-blue" href="/calendario">Calendario</a></li>
+          <li><a class="hover:text-brand-blue" href="/galeria">Galería</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3">
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-400 font-semibold mb-4">Información legal</p>
+        <ul class="space-y-2 text-sm text-ink-500">
+          <li><span class="font-semibold text-ink-900">Razón social</span><br>Fundación Sonriente — Alfonso Rojas</li>
+          <li><span class="font-semibold text-ink-900">NIT</span> 901.120.906-0</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="hr-soft my-10">
+
+    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between text-xs text-ink-400">
+      <p>© 2026 Fundación Sonriente · Organización sin ánimo de lucro · ¡Sonreír es Gratis!</p>
+      <div class="flex items-center gap-5">
+        <a href="/estados-financieros" class="hover:text-brand-blue">Transparencia</a>
+        <a href="/contactanos" class="hover:text-brand-blue">Contacto</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  if (!counters.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.getAttribute("data-target"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    const duration = 1500;
+    const startTime = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(step); else el.textContent = target + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(c => { if (!c.dataset.done) { c.dataset.done = '1'; animate(c); } });
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  const target = document.querySelector("#metrics") || counters[0];
+  io.observe(target);
+});
+</script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const els = document.querySelectorAll('[data-reveal]');
+                if (!('IntersectionObserver' in window) || !els.length) {
+                    els.forEach(el => el.classList.add('is-visible'));
+                    return;
+                }
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+                els.forEach(el => io.observe(el));
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const nav = document.getElementById('site-nav');
+                if (!nav) return;
+                const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            });
+        </script>
+    </body>
+</html>
