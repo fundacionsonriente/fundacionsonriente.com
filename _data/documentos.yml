@@ -1,0 +1,51 @@
+# Documentos oficiales publicados en la página de Transparencia.
+# Los archivos viven en /assets/pdf/. Si reemplazas un PDF, conserva el mismo nombre o actualiza el campo "file".
+#
+# icon:       file | doc | cert | book | vision
+# icon_style: default | yellow | red
+# tag_style:  default | quiet | yellow
+
+- title: "Estados financieros 2025 y notas"
+  description: "Situación financiera, resultado, flujo de efectivo y cambios en el patrimonio, firmados por Representante Legal y Revisoría Fiscal."
+  file: "EEFF SONRIENTE 2025 FIRMADOS.pdf"
+  cta: "Descargar PDF firmado"
+  tag: "2025"
+  tag_style: "default"
+  icon: "file"
+  icon_style: "default"
+
+- title: "Informe de gestión 2025"
+  description: "Reporte anual de actividades, programas ejecutados y resultados de la fundación."
+  file: "INFORME DE GESTIÓN FUNDACIÓN SONRIENTE 2026.docx"
+  cta: "Descargar informe (DOCX)"
+  tag: "2025"
+  tag_style: "default"
+  icon: "doc"
+  icon_style: "yellow"
+
+- title: "Certificación de requisitos"
+  description: "Certificación del Representante Legal y la Revisoría Fiscal sobre el cumplimiento de requisitos del año."
+  file: "CERTIFICACION REQUISITOS FUNDACION SONRIENTE 2026.pdf"
+  cta: "Descargar certificación"
+  tag: "2025"
+  tag_style: "default"
+  icon: "cert"
+  icon_style: "red"
+
+- title: "Estatutos de la fundación"
+  description: "Acta del máximo órgano directivo con los estatutos institucionales que rigen la fundación."
+  file: "ESTATUTOS.pdf"
+  cta: "Descargar estatutos"
+  tag: "Vigente"
+  tag_style: "quiet"
+  icon: "book"
+  icon_style: "default"
+
+- title: "Brochure Sonriente 2030"
+  description: "Hacia dónde vamos: la visión y los programas que nos guían al 2030."
+  file: "Brochure Sonriente 2030.pdf"
+  cta: "Descargar brochure"
+  tag: "Visión"
+  tag_style: "yellow"
+  icon: "vision"
+  icon_style: "default"
