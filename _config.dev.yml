@@ -1,0 +1,5 @@
+# Override de configuración para desarrollo local.
+# Se aplica con:  bundle exec jekyll serve --config _config.yml,_config.dev.yml
+# o vía el script npm:  npm run serve
+url: 'http://localhost:4000'
+baseurl: ''
