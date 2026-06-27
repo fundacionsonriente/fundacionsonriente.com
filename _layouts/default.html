@@ -3,38 +3,55 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ page.description | default: site.description }}">
+        <meta name="theme-color" content="#1860c4">
 
-        <title>{{ page.title }} - {{ site.title }}</title>
+        <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
 
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="/assets/css/main.css">
     </head>
 
-    <body class="bg-white dark:bg-gray-900 antialiased">
+    <body class="antialiased">
+        <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
         {% include navbar.html %}
 
-        <main class="mt-[65px]">
+        <main id="contenido" class="pt-[72px]">
             {{ content }}
         </main>
 
         {% include footer.html %}
 
-        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js" defer></script>
+
         <script>
-            (function () {
-                try {
-                    const ls = localStorage.getItem('theme');
-                    if (ls === 'dark' || (!ls && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        document.documentElement.classList.add('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                    }
-                } catch (_) {
-                    /* si localStorage no está disponible, cae a media query */
-                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                        document.documentElement.classList.add('dark');
-                    }
+            document.addEventListener("DOMContentLoaded", function () {
+                const els = document.querySelectorAll('[data-reveal]');
+                if (!('IntersectionObserver' in window) || !els.length) {
+                    els.forEach(el => el.classList.add('is-visible'));
+                    return;
                 }
-            })();
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+                els.forEach(el => io.observe(el));
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const nav = document.getElementById('site-nav');
+                if (!nav) return;
+                const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
+                onScroll();
+                window.addEventListener('scroll', onScroll, { passive: true });
+            });
         </script>
     </body>
 </html>

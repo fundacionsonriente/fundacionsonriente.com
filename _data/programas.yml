@@ -1,0 +1,63 @@
+- slug: kits-escolares
+  nombre: "Kits Escolares"
+  categoria: "Educación"
+  color: blue
+  icon: book
+  resumen: "Apoyo escolar para que ningún niño o niña deje de aprender por falta de materiales."
+  detalle: "Entregamos morrales, cuadernos y útiles a estudiantes de barrios priorizados al inicio del año escolar."
+
+- slug: programa-clown
+  nombre: "Programa Clown"
+  categoria: "Salud y bienestar"
+  color: red
+  icon: heart
+  resumen: "Payasitos hospitalarios que llevan alegría y juego a niños hospitalizados."
+  detalle: "Visitamos áreas pediátricas con voluntarios formados como clowns para acompañar tratamientos con humor y ternura."
+
+- slug: cines-al-barrio
+  nombre: "Cines al Barrio"
+  categoria: "Comunidad"
+  color: yellow
+  icon: film
+  resumen: "Funciones de cine al aire libre que reúnen a la comunidad en torno a películas familiares."
+  detalle: "Llevamos pantallas y proyectores a barrios y veredas para crear noches de cine accesibles y seguras."
+
+- slug: nativos-sonriente
+  nombre: "Nativos Sonriente"
+  categoria: "Cultura e identidad"
+  color: blue
+  icon: shield
+  resumen: "Espacios de identidad y deporte que rescatan tradiciones y valoran la cultura local."
+  detalle: "Encuentros, formación deportiva y celebraciones para fortalecer el sentido de pertenencia en los niños y jóvenes."
+
+- slug: teatro-arte-recreacion
+  nombre: "Teatro, Arte y Recreación Sonriente"
+  categoria: "Recreación"
+  color: yellow
+  icon: palette
+  resumen: "Jornadas recreativas con juego, música, arte y expresión corporal."
+  detalle: "Espacios de creatividad para que niñas y niños descubran sus talentos y construyan habilidades sociales."
+
+- slug: pinta-tu-escuelita
+  nombre: "Pinta Tu Escuelita"
+  categoria: "Infraestructura"
+  color: red
+  icon: brush
+  resumen: "Renovamos espacios escolares con color, murales y mejoras locativas."
+  detalle: "Trabajamos junto a comunidades educativas para que los niños aprendan en entornos dignos y alegres."
+
+- slug: riesgos-sociales
+  nombre: "Los Riesgos Sociales"
+  categoria: "Prevención"
+  color: blue
+  icon: alert
+  resumen: "Talleres y charlas para prevenir consumo, violencia y deserción escolar."
+  detalle: "Acompañamos a niñas, niños y familias con herramientas para enfrentar riesgos del entorno y proteger su desarrollo."
+
+- slug: super-navidad-sonriente
+  nombre: "Súper Navidad Sonriente"
+  categoria: "Especial"
+  color: red
+  icon: gift
+  resumen: "La gran jornada anual de Navidad con regalos, recreación y celebración con miles de niños."
+  detalle: "Cierre del año en el que la fundación, voluntarios y aliados llevan magia, juguetes y momentos inolvidables."

@@ -1,11 +1,10 @@
-<div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-    <img class="boxart w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="assets/img/{{ include.member.img }}" alt="Portrait">
-
-    <div class="p-5">
-        <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ include.member.name }}</h3>
-
-        <span class="text-gray-500 dark:text-gray-400">{{ include.member.description }}</span>
-
-        <p class="mt-3 mb-4 font-light text-gray-500">{{ include.member.info }}</p>
-    </div>
-</div>
+<article class="group card flex flex-col items-center text-center p-6">
+  <div class="relative mb-5">
+    <div class="absolute inset-0 rounded-full bg-brand-blue-soft scale-110 group-hover:scale-125 transition-transform duration-500" aria-hidden="true"></div>
+    <img class="relative h-28 w-28 rounded-full object-cover ring-4 ring-white"
+         src="/assets/img/{{ include.member.img }}" alt="{{ include.member.name }}">
+  </div>
+  <h3 class="text-base font-semibold text-ink-900">{{ include.member.name }}</h3>
+  <p class="mt-1 text-xs uppercase tracking-[0.14em] text-brand-blue font-semibold">{{ include.member.description }}</p>
+  <p class="mt-3 text-sm text-ink-500 leading-relaxed">{{ include.member.info }}</p>
+</article>

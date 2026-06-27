@@ -1,0 +1,44 @@
+---
+layout: default
+title: "Galería"
+description: "Galería de fotografías de las jornadas, talleres y programas de la Fundación Sonriente."
+---
+
+<!-- HERO -->
+<section class="relative overflow-hidden section-festive">
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-soft-grid opacity-40"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand-red/15 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -left-20 h-[320px] w-[320px] rounded-full bg-brand-yellow/25 blur-3xl"></div>
+
+  <div class="container-prose pt-16 lg:pt-24 pb-12">
+    <div class="max-w-3xl animate-fade-up">
+      <span class="eyebrow">Galería</span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink-900">
+        Sonrisas que cuentan historias.
+      </h1>
+      <p class="mt-7 text-lg text-ink-500 max-w-2xl leading-relaxed">
+        Un recorrido visual por las jornadas, programas y momentos que dan vida a la Fundación Sonriente.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="section-white">
+  <div class="container-prose py-16 lg:py-24">
+
+    <div class="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4" data-reveal>
+      {% for item in site.data.gallery %}
+        {% include gallery_item.html item=item %}
+      {% endfor %}
+    </div>
+
+    <div class="mt-14 text-center" data-reveal>
+      <p class="text-sm text-ink-500">¿Quieres ver más sonrisas? Síguenos en redes.</p>
+      <div class="mt-5 flex items-center justify-center gap-3">
+        <a href="https://www.instagram.com/fundacionsonriente/" target="_blank" rel="noopener" class="btn btn-primary">Instagram</a>
+        <a href="https://www.facebook.com/FundacionSonriente/" target="_blank" rel="noopener" class="btn btn-ghost">Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>

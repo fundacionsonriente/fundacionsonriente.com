@@ -1,0 +1,59 @@
+- img: actividades_10.png
+  alt: Entrega de kits escolares en una jornada Sonriente
+  programa: Kits Escolares
+  categoria: educacion
+  span: tall
+
+- img: about_us_1.png
+  alt: Programa Clown en hospital pediátrico
+  programa: Programa Clown
+  categoria: salud
+  span: square
+
+- img: about_us_2.png
+  alt: Función de Cines al Barrio en la comunidad
+  programa: Cines al Barrio
+  categoria: comunidad
+  span: square
+
+- img: actividades_1.png
+  alt: Súper Navidad Sonriente con regalos para los niños
+  programa: Súper Navidad Sonriente
+  categoria: especial
+  span: tall
+
+- img: actividades_2.png
+  alt: Equipo Nativos Sonriente en formación deportiva
+  programa: Nativos Sonriente
+  categoria: cultura
+  span: square
+
+- img: actividades_8.png
+  alt: Jornada de Teatro, Arte y Recreación con niñas y niños
+  programa: Teatro, Arte y Recreación Sonriente
+  categoria: recreacion
+  span: square
+
+- img: actividades_3.png
+  alt: Familias acompañadas por la Fundación Sonriente
+  programa: Hogares que sonríen
+  categoria: familia
+  span: tall
+
+- img: actividades_9.png
+  alt: Mural terminado de Pinta Tu Escuelita
+  programa: Pinta Tu Escuelita
+  categoria: infraestructura
+  span: square
+
+- img: actividades_5.png
+  alt: Taller de prevención de Los Riesgos Sociales
+  programa: Los Riesgos Sociales
+  categoria: prevencion
+  span: square
+
+- img: actividades_6.png
+  alt: Equipo de voluntarios Sonriente
+  programa: Staff Sonriente
+  categoria: voluntariado
+  span: square

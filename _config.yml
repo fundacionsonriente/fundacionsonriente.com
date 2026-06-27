@@ -3,6 +3,8 @@ url: ''
 baseurl: ''
 lang: 'es-CO'
 title: 'Fundación Sonriente'
+tagline: '¡Sonreír es Gratis!'
+description: 'Fundación Sonriente — Alfonso Rojas. Organización civil unida desde 2015 que construye puentes para llevar felicidad a niñas, niños y familias del Meta a través de programas de recreación, formación en valores y acompañamiento.'
 
 # mailer: 'https://formspree.io/f/'
 
@@ -18,7 +20,21 @@ exclude:
   - package.json
   - postcss.config.js
   - tailwind.config.js
+  - requirements.md
+  - 'Brochure Sonriente 2030.pdf'
 
 collections:
   actividades:
     output: false
+
+# URLs limpias: cada página genera /nombre/index.html
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      permalink: /:basename/
+
+# Forzar URLs sin trailing slash al servir
+keep_files:
+  - assets

@@ -1,93 +1,242 @@
 ---
 layout: default
 title: "Donaciones"
+description: "Apoya a la Fundación Sonriente. Tu donación se traduce en jornadas, kits y oportunidades para niñas, niños y familias del Meta."
 ---
 
-<section class="bg-gray-50 dark:bg-gray-900">
-  <div class="py-12 px-4 mx-auto max-w-screen-xl lg:py-16">
-    <div class="max-w-2xl mx-auto text-center mb-10">
-      <h1 class="mb-4 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white">{{ page.title }}</h1>
-      <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400">Cada aporte nos ayuda a llegar a más niños, niñas y familias en situación de vulnerabilidad. Puedes realizar un apoyo económico o en especie, según tus posibilidades.</p>
+<!-- HERO -->
+<section class="relative overflow-hidden section-festive">
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-soft-grid opacity-40"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-brand-yellow/30 blur-3xl"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -left-20 h-[320px] w-[320px] rounded-full bg-brand-blue/20 blur-3xl"></div>
+
+  <div class="container-prose pt-16 lg:pt-24 pb-12">
+    <div class="max-w-3xl animate-fade-up">
+      <span class="eyebrow">Donar</span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05] text-ink-900">
+        Tu mano se extiende para regalar un pedacito de felicidad.
+      </h1>
+      <p class="mt-7 text-lg text-ink-500 max-w-2xl leading-relaxed">
+        Cada donación, sin importar su monto, nos permite llegar a más niños, niñas y familias en condición
+        de vulnerabilidad social, económica y de salud en el departamento del Meta.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO POR MONTO -->
+<section class="section-white">
+  <div class="container-prose py-16 lg:py-20">
+    <div class="max-w-2xl mb-10" data-reveal>
+      <span class="eyebrow">¿En qué se traduce tu aporte?</span>
+      <h2 class="mt-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-ink-900">
+        Transparencia en cada peso.
+      </h2>
     </div>
 
-    <div class="grid gap-6 mb-10 md:grid-cols-3 max-w-5xl mx-auto">
-      <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Aporte único</h2>
-        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Un solo aporte que se convierte en refrigerios, materiales lúdicos o transporte para las jornadas.</p>
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="card" data-reveal>
+        <p class="text-3xl font-extrabold text-ink-900 tabular-nums">$ 30.000</p>
+        <p class="mt-1 text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Aporte único</p>
+        <p class="mt-4 text-sm text-ink-500 leading-relaxed">
+          Apadrina los refrigerios de una jornada del Programa Clown o de Cines al Barrio.
+        </p>
       </article>
-      <article class="rounded-2xl border border-blue-200 bg-blue-50/80 p-5 shadow-sm dark:border-blue-700/70 dark:bg-blue-900/30">
-        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Aporte mensual</h2>
-        <p class="text-xs sm:text-sm text-gray-700 dark:text-blue-50">Apoyo constante que nos permite planear actividades y acompañamientos a largo plazo.</p>
+
+      <article class="relative overflow-hidden card border-brand-blue/30 bg-gradient-to-br from-brand-blue-soft to-white" data-reveal>
+        <span class="tag absolute right-6 top-6">Más popular</span>
+        <p class="text-3xl font-extrabold text-ink-900 tabular-nums">$ 80.000</p>
+        <p class="mt-1 text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Padrino mensual</p>
+        <p class="mt-4 text-sm text-ink-500 leading-relaxed">
+          Sostienes los materiales y el transporte de una actividad Sonriente durante un mes completo.
+        </p>
       </article>
-      <article class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <h2 class="mb-1 text-base font-semibold text-gray-900 dark:text-white">Donación en especie</h2>
-        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Puedes donar juguetes, alimentos no perecederos, kits escolares o materiales para actividades.</p>
+
+      <article class="card" data-reveal>
+        <p class="text-3xl font-extrabold text-ink-900 tabular-nums">$ 250.000</p>
+        <p class="mt-1 text-xs uppercase tracking-[0.16em] font-semibold text-brand-blue">Padrino anual</p>
+        <p class="mt-4 text-sm text-ink-500 leading-relaxed">
+          Garantizas un Kit Escolar completo y bienestar para un niño durante todo el año.
+        </p>
       </article>
     </div>
+  </div>
+</section>
 
-    <div class="max-w-3xl mx-auto">
-      <form class="bg-white rounded-2xl border border-gray-200 p-6 sm:p-8 shadow-sm dark:bg-gray-800 dark:border-gray-700" method="post" action="enviar.php">
-        <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Formulario de donación</h2>
+<!-- FORMULARIO + INFO -->
+<section class="section-soft">
+  <div class="container-prose py-20 lg:py-28">
+    <div class="grid gap-10 lg:grid-cols-12">
 
-        <div class="mb-5">
-          <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu nombre completo</label>
-          <input type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escribe tu nombre completo" required />
+      <aside class="lg:col-span-4" data-reveal>
+        <div class="card p-7">
+          <span class="icon-chip">
+            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-19.5 0v9a1.5 1.5 0 0 0 1.5 1.5h16.5a1.5 1.5 0 0 0 1.5-1.5V9M6 14.25h2.25"/>
+            </svg>
+          </span>
+          <h3 class="mt-5 text-lg font-semibold text-ink-900">Datos de la fundación</h3>
+          <dl class="mt-5 space-y-4 text-sm">
+            <div>
+              <dt class="text-xs uppercase tracking-[0.14em] font-semibold text-ink-400">Razón social</dt>
+              <dd class="mt-0.5 text-ink-900">Fundación Sonriente — Alfonso Rojas</dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-[0.14em] font-semibold text-ink-400">NIT</dt>
+              <dd class="mt-0.5 text-ink-900 tabular-nums">901.120.906-0</dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-[0.14em] font-semibold text-ink-400">Contacto donaciones</dt>
+              <dd class="mt-0.5 text-ink-900 tabular-nums">+57 321 997 2131</dd>
+            </div>
+            <div>
+              <dt class="text-xs uppercase tracking-[0.14em] font-semibold text-ink-400">Correo</dt>
+              <dd class="mt-0.5 text-ink-900">fundacionsonriente@hotmail.com</dd>
+            </div>
+          </dl>
         </div>
 
-        <div class="mb-5">
-          <label for="correo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu correo electrónico</label>
-          <input type="email" id="correo" name="correo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="ejemplo@correo.com" required />
+        <div class="card-soft mt-6 p-6 text-sm text-ink-500">
+          <p class="font-semibold text-ink-900 mb-2">¿Donación en especie?</p>
+          <p class="leading-relaxed">
+            Recibimos juguetes nuevos o en buen estado, kits escolares, materiales para actividades y aportes para
+            la Súper Navidad Sonriente. Coordina con el equipo.
+          </p>
         </div>
+      </aside>
 
-        <div class="mb-5">
-          <label for="tipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo de donación</label>
-          <select id="tipo" name="tipo_donacion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-            <option value="" selected>Selecciona una opción</option>
-            <option value="aporte_unico">Aporte único</option>
-            <option value="aporte_mensual">Aporte mensual</option>
-            <option value="en_especie">Donación en especie</option>
-          </select>
-        </div>
+      <div class="lg:col-span-8" data-reveal>
+        <form class="card p-8 lg:p-10" method="post" action="#">
+          <h2 class="text-xl font-semibold text-ink-900">Formulario de donación</h2>
+          <p class="mt-2 text-sm text-ink-500">Después de enviar, nuestro equipo se comunicará contigo para coordinar.</p>
 
-        <div class="grid gap-4 mb-5 sm:grid-cols-2">
-          <div>
-            <label for="monto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Monto aproximado (COP)</label>
-            <input type="number" min="0" step="1000" id="monto" name="monto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ej. 50000" />
-          </div>
-
-          <div>
-            <span class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Frecuencia</span>
-            <div class="flex flex-wrap gap-3 text-sm">
-              <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input type="radio" name="frecuencia" value="unica" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" checked />Única vez</label>
-              <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input type="radio" name="frecuencia" value="mensual" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" />Mensual</label>
+          <div class="mt-8 grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="nombre" class="field-label">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" class="field" placeholder="Tu nombre" required />
+            </div>
+            <div>
+              <label for="correo" class="field-label">Correo electrónico</label>
+              <input type="email" id="correo" name="correo" class="field" placeholder="ejemplo@correo.com" required />
             </div>
           </div>
-        </div>
 
-        <div class="mb-5">
-          <label for="medio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Medio de donación preferido</label>
-          <select id="medio" name="medio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option value="" selected>Selecciona una opción</option>
-            <option value="transferencia">Transferencia bancaria</option>
-            <option value="nequi">Nequi / Daviplata</option>
-            <option value="efectivo">Efectivo</option>
-            <option value="especie">Donación en especie</option>
-          </select>
-        </div>
+          <div class="mt-5">
+            <label class="field-label">Frecuencia</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="frecuencia" value="unica" class="peer sr-only" checked>
+                <div class="rounded-xl border border-ink-200 px-4 py-3 text-sm font-medium text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue-soft peer-checked:text-brand-blue">
+                  Única vez
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="frecuencia" value="mensual" class="peer sr-only">
+                <div class="rounded-xl border border-ink-200 px-4 py-3 text-sm font-medium text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue-soft peer-checked:text-brand-blue">
+                  Mensual · Padrino
+                </div>
+              </label>
+            </div>
+          </div>
 
-        <div class="mb-5">
-          <label for="mensaje" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Comentarios o detalles de tu donación</label>
-          <textarea id="mensaje" name="mensaje" rows="5" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Por ejemplo: qué deseas donar, si es en especie, horarios de contacto, etc."></textarea>
-        </div>
+          <div class="mt-5">
+            <label class="field-label">Monto (COP)</label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              <label class="cursor-pointer">
+                <input type="radio" name="monto" value="30000" class="peer sr-only">
+                <div class="rounded-xl border border-ink-200 px-3 py-2.5 text-sm text-center font-semibold text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue peer-checked:text-white">
+                  $ 30.000
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="monto" value="80000" class="peer sr-only" checked>
+                <div class="rounded-xl border border-ink-200 px-3 py-2.5 text-sm text-center font-semibold text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue peer-checked:text-white">
+                  $ 80.000
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="monto" value="150000" class="peer sr-only">
+                <div class="rounded-xl border border-ink-200 px-3 py-2.5 text-sm text-center font-semibold text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue peer-checked:text-white">
+                  $ 150.000
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="monto" value="250000" class="peer sr-only">
+                <div class="rounded-xl border border-ink-200 px-3 py-2.5 text-sm text-center font-semibold text-ink-700 peer-checked:border-brand-blue peer-checked:bg-brand-blue peer-checked:text-white">
+                  $ 250.000
+                </div>
+              </label>
+            </div>
 
-        <div class="mb-6">
-          <label class="flex items-start gap-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300"><input id="acepta_datos" name="acepta_datos" type="checkbox" required class="mt-1 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600" /><span>Acepto el tratamiento de mis datos personales por parte de la Fundación Sonriente de acuerdo con la política de privacidad.</span></label>
-        </div>
+            <div class="mt-3">
+              <label for="monto_custom" class="field-label">Otro monto</label>
+              <input type="number" min="1000" step="1000" id="monto_custom" name="monto_custom" class="field" placeholder="Ej. 100.000">
+            </div>
+          </div>
 
-        <button type="submit" class="inline-flex items-center justify-center text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg px-6 py-2.5 w-full sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Enviar intención de donación</button>
+          <div class="mt-5">
+            <label for="medio" class="field-label">Medio de donación preferido</label>
+            <select id="medio" name="medio" class="field">
+              <option value="">Selecciona una opción</option>
+              <option value="transferencia">Transferencia bancaria</option>
+              <option value="nequi">Nequi / Daviplata</option>
+              <option value="efectivo">Efectivo</option>
+              <option value="especie">Donación en especie</option>
+            </select>
+          </div>
 
-        <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">Después de enviar este formulario, nuestro equipo se comunicará contigo para indicarte los pasos y canales disponibles para realizar tu donación.</p>
-      </form>
+          <div class="mt-5">
+            <label for="mensaje" class="field-label">Comentarios (opcional)</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="field" placeholder="Cuéntanos si tu donación tiene un destino especial."></textarea>
+          </div>
+
+          <div class="mt-6">
+            <label class="flex items-start gap-3 text-sm text-ink-500">
+              <input type="checkbox" required class="mt-1 h-4 w-4 rounded border-ink-300 text-brand-blue focus:ring-brand-blue">
+              <span>Acepto el tratamiento de mis datos personales por parte de la Fundación Sonriente.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-accent mt-7 w-full sm:w-auto">
+            Enviar intención de donación
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-white">
+  <div class="container-prose py-20 lg:py-24">
+    <div class="grid gap-12 lg:grid-cols-12" data-reveal>
+      <div class="lg:col-span-4">
+        <span class="eyebrow">Preguntas frecuentes</span>
+        <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-ink-900">
+          Lo que debes saber antes de donar.
+        </h2>
+      </div>
+
+      <div class="lg:col-span-8">
+        <details class="faq">
+          <summary>¿Mi donación tiene beneficios tributarios?</summary>
+          <p>Sí. La Fundación Sonriente — Alfonso Rojas es entidad sin ánimo de lucro (NIT 901.120.906-0); emitimos un certificado para tu declaración de renta cuando lo solicites.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Puedo cancelar mi padrinazgo mensual cuando quiera?</summary>
+          <p>Por supuesto. Tú decides cuánto tiempo deseas apoyar. Escríbenos a fundacionsonriente@hotmail.com para pausarlo o cancelarlo.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Cómo sé en qué se usó mi aporte?</summary>
+          <p>Publicamos los estados financieros e informes en nuestra sección de Transparencia. Para 2025 reportamos ingresos por $15.589.510 y costos de ejecución meritoria por $13.349.415.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Aceptan donaciones en especie?</summary>
+          <p>Sí, especialmente juguetes en buen estado, kits escolares, materiales para actividades y aportes para la Súper Navidad Sonriente. Coordinamos la entrega.</p>
+        </details>
+      </div>
     </div>
   </div>
 </section>

@@ -1,0 +1,23 @@
+{%- assign item = include.item -%}
+{%- if item.span == "tall" -%}
+  {%- assign span_classes = "row-span-2 aspect-[3/4]" -%}
+{%- elsif item.span == "wide" -%}
+  {%- assign span_classes = "col-span-2 aspect-[16/9]" -%}
+{%- else -%}
+  {%- assign span_classes = "aspect-square" -%}
+{%- endif -%}
+
+<figure class="group relative overflow-hidden rounded-2xl border border-ink-100 bg-white {{ span_classes }}">
+  <img src="/assets/img/{{ item.img }}" alt="{{ item.alt }}"
+       loading="lazy"
+       class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+  <figcaption class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-ink-900/85 via-ink-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+    {% if item.programa %}
+      <p class="text-xs uppercase tracking-[0.14em] font-semibold text-white/75">{{ item.programa }}</p>
+    {% endif %}
+    {% if item.alt %}
+      <p class="mt-1 text-sm font-semibold text-white">{{ item.alt }}</p>
+    {% endif %}
+  </figcaption>
+</figure>

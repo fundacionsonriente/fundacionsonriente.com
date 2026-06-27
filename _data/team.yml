@@ -1,19 +1,19 @@
-- name: Mauricio Turriago
+- name: Neyer Mauricio Turriago Gutiérrez
   img: mauricio_turriago.png
-  description: Fundador y Director
-  info: Mauricio es el fundador y director de la Fundación Sonriente con la pasión por ayudar a los demás.
+  description: Fundador y Representante Legal
+  info: Lidera la Fundación Sonriente desde su origen, con la pasión de construir puentes que lleven felicidad a la primera infancia del Meta.
 
 - name: Javier Vanegas
   img: javier_vanegas.png
   description: Coordinador de Proyectos
-  info: Javier es el coordinador de proyectos, encargado de planificar y ejecutar las actividades de la fundación.
+  info: Planifica y articula las jornadas, talleres y alianzas que dan vida a los programas Sonrientes.
 
 - name: Smith Parrado
   img: smith_parrado.png
   description: Coordinador de Voluntariado
-  info: Smith es el coordinador de voluntariado, gestiona a los voluntarios que apoyan nuestras actividades.
+  info: Acompaña a los voluntarios y al equipo Staff que hace posible cada actividad en campo.
 
 - name: Felipe Marin
   img: felipe_marin.png
   description: Coordinador de Comunicaciones
-  info: Felipe es el coordinador de comunicaciones, difunde los logros de la fundación a través de diversos canales.
+  info: Comunica la labor y las historias de la Fundación en redes, medios y aliados estratégicos.
