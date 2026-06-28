@@ -1,0 +1,8 @@
+- name: "Avellano"
+  logo: "avellano.png"
+- name: "La Garza"
+  logo: "la_garza.png"
+- name: "Los Capachos"
+  logo: "los_capachos.png"
+- name: "Rápidos"
+  logo: "rapidos.jpeg"
