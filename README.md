@@ -53,7 +53,6 @@ fundacionsonriente.com/
 ├─ _includes/               # Partials reutilizables
 │   ├─ navbar.html          # Navbar sticky con liquid glass
 │   ├─ footer.html          # Footer con franja tricolor y datos institucionales
-│   ├─ carousel.html        # Carrusel Flowbite (toma de _data/carousel.yml)
 │   ├─ gallery_item.html    # Tarjeta de imagen para la galería
 │   ├─ programa_card.html   # Tarjeta de programa
 │   ├─ team_card.html       # Tarjeta de integrante del equipo
@@ -64,7 +63,7 @@ fundacionsonriente.com/
 │   ├─ programas.yml        # Programas activos
 │   ├─ gallery.yml          # Imágenes de la galería
 │   ├─ documentos.yml       # Documentos oficiales (transparencia)
-│   └─ carousel.yml         # Slides del carrusel
+│   └─ aliados.yml          # Logos de empresas aliadas (home)
 │
 ├─ _actividades/            # Colección (Jekyll) de actividades/eventos próximos
 │
@@ -177,11 +176,13 @@ Documentos de la página de Transparencia. Para agregar uno:
 
 El nombre del archivo puede tener espacios y tildes — Jekyll los codifica automáticamente vía `url_encode`.
 
-### Carrusel — `_data/carousel.yml`
+### Aliados — `_data/aliados.yml`
+
+Logos de empresas aliadas que se muestran en el home.
 
 ```yaml
-- img: nombre.png        # debe estar en assets/img/carousel/
-  label: Texto accesible
+- name: "Nombre de la empresa"   # aparece debajo del logo
+  logo: "archivo.png"            # debe estar en assets/img/clients/
 ```
 
 ---
@@ -191,7 +192,7 @@ El nombre del archivo puede tener espacios y tildes — Jekyll los codifica auto
 | Tipo | Dónde va | Cómo se referencia |
 |------|----------|---------------------|
 | Fotos generales | `assets/img/` | En YAML: solo el nombre (`actividades_1.png`). En HTML: `{{ "/assets/img/archivo.png" \| relative_url }}` |
-| Fotos del carrusel | `assets/img/carousel/` | Solo el nombre en `carousel.yml` |
+| Logos de aliados | `assets/img/clients/` | Solo el nombre en `aliados.yml` |
 | PDFs | `assets/pdf/` | Solo el nombre en `documentos.yml` |
 | Logo / favicon | `assets/img/logo.png` y `favicon.ico` | Referenciados en `_layouts/default.html` y `_includes/footer.html` |
 
